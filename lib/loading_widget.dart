@@ -4,15 +4,9 @@ import 'package:flutter/material.dart';
 
 import 'loading_indicator_type.dart';
 
+/// Widget apresentado durante o processamento de alguma tarefa realziada pelo
+/// app. Indica ao usuário que ele deve esperar a finalização de algo.
 class EsigLoadingWidget extends StatelessWidget {
-  final String? ilustracaoAsset;
-  final BoxConstraints? tamanhoIlustracao;
-  final LoadingIndicator loadingIndicator;
-  final EdgeInsets? paddingIndicator;
-  final Color? colorIndicator;
-  final String mensagem;
-  final double? mensagemFontSize;
-
   const EsigLoadingWidget({
     Key? key,
     this.ilustracaoAsset,
@@ -23,6 +17,29 @@ class EsigLoadingWidget extends StatelessWidget {
     this.mensagemFontSize,
     this.colorIndicator,
   }) : super(key: key);
+
+  /// Caminho do asset declarado no [pubspec.yaml]. A imagem está configurada
+  /// com [fit: BoxFit.contain].
+  final String? ilustracaoAsset;
+
+  /// Constraints máximos e mínimos da ilustração.
+  final BoxConstraints? tamanhoIlustracao;
+
+  /// Tipo do indicador de progresso padrão do Flutter a ser exibido. Opções
+  /// estão disponíveis em [loading_indicator_type.dart] e são [VAZIO], [LINEAR],
+  /// e [CIRCULAR]. Valor padrão é [VAZIO].
+  final LoadingIndicator loadingIndicator;
+
+  final EdgeInsets? paddingIndicator;
+
+  /// Cor no indicador de progresso.
+  final Color? colorIndicator;
+
+  /// Mensagem explicando o motivo deste widget aparecer.
+  final String mensagem;
+
+  /// Tamanho da mensagem. Valor padrão é o mesmo do Flutter.
+  final double? mensagemFontSize;
 
   @override
   Widget build(BuildContext context) {
