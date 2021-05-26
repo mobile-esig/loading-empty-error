@@ -4,9 +4,6 @@ class EsigTextButton extends StatelessWidget {
   final String texto;
   final Color? corTexto;
   final Color? corFundo;
-
-  final bool? bordas;
-
   final void Function()? onPressed;
 
   const EsigTextButton({
@@ -14,7 +11,6 @@ class EsigTextButton extends StatelessWidget {
     required this.texto,
     this.corTexto,
     this.corFundo,
-    this.bordas,
     this.onPressed,
   }) : super(key: key);
 
@@ -27,12 +23,19 @@ class EsigTextButton extends StatelessWidget {
       ),
       onPressed: onPressed,
       style: TextButton.styleFrom(
+        // padding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(),
-        side: BorderSide(
-          width: bordas == true ? 1.0 : 0.0,
-        ),
         backgroundColor: corFundo,
       ),
     );
   }
 }
+
+/**
+bordas == true
+                ? BorderSide(
+                    width: 1.0,
+                    color: corTexto ?? Colors.grey,
+                  )
+                : null,
+ */
