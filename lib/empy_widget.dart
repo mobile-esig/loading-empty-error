@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// Widget destinado aos casos nos quais a tela deveria contem informações úteis
+/// mas que, por algum motivo, não estão disponíveis.
 class EsigEmptyWidget extends StatelessWidget {
-  final String? ilustracaoAsset;
-  final BoxConstraints? tamanhoIlustracao;
-  final String? titulo;
-  final double? tituloFontSize;
-  final EdgeInsets? tituloPadding;
-  final String mensagem;
-  final double? mensagemFontSize;
-  final EdgeInsets? mensagemPadding;
-
   const EsigEmptyWidget({
     Key? key,
     this.ilustracaoAsset,
@@ -21,6 +14,31 @@ class EsigEmptyWidget extends StatelessWidget {
     this.mensagemFontSize,
     this.mensagemPadding,
   }) : super(key: key);
+
+  /// Caminho do asset declarado no [pubspec.yaml]. A imagem está configurada
+  /// com [fit: BoxFit.contain].
+  final String? ilustracaoAsset;
+
+  /// Constraints máximos e mínimos da ilustração.
+  final BoxConstraints? tamanhoIlustracao;
+
+  /// Texto em negrito logo abaixo da ilustração e acima da [menssagem].
+  final String? titulo;
+
+  /// Tamanho do texto no título. Valor padrão é o mesmo do Flutter.
+  final double? tituloFontSize;
+
+  /// Padding em torno do título. Padrão é [EdgeInsets.all(8.0)].
+  final EdgeInsets? tituloPadding;
+
+  /// Mensagem explicando o motivo deste widget aparecer.
+  final String mensagem;
+
+  /// Tamanho da mensagem. Valor padrão é o mesmo do Flutter.
+  final double? mensagemFontSize;
+
+  /// Padding em torno da mensagem. Valor padrão é [EdgeInsets.all(8.0)]
+  final EdgeInsets? mensagemPadding;
 
   @override
   Widget build(BuildContext context) {

@@ -2,20 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-///
+/// Widgets distinado aos casos nos quais ocorreu um erro interno no app e
+/// alguma tarefa não pôde ser completada.
 class EsigErrorWidget extends StatelessWidget {
-  final String? ilustracaoAsset;
-  final BoxConstraints? tamanhoIlustracao;
-  final String? titulo;
-  final double? tituloFontSize;
-  final EdgeInsets? tituloPadding;
-  final String mensagem;
-  final double? mensagemFontSize;
-  final EdgeInsets? mensagemPadding;
-  final void Function()? onTryAgain;
-  final Color? tryAgainBackgroundColor;
-  final Color? tryAgainTextColor;
-
   const EsigErrorWidget({
     Key? key,
     this.ilustracaoAsset,
@@ -30,6 +19,43 @@ class EsigErrorWidget extends StatelessWidget {
     this.tryAgainBackgroundColor,
     this.tryAgainTextColor,
   }) : super(key: key);
+
+  /// Caminho do asset declarado no [pubspec.yaml]. A imagem está configurada
+  /// com [fit: BoxFit.contain].
+  final String? ilustracaoAsset;
+
+  /// Constraints máximos e mínimos da ilustração.
+  final BoxConstraints? tamanhoIlustracao;
+
+  /// Texto em negrito logo abaixo da ilustração e acima da [menssagem].
+  final String? titulo;
+
+  /// Tamanho do texto no título. Valor padrão é o mesmo do Flutter.
+  final double? tituloFontSize;
+
+  /// Padding em torno do título. Padrão é [EdgeInsets.all(8.0)].
+  final EdgeInsets? tituloPadding;
+
+  /// Mensagem explicando o motivo deste widget aparecer.
+  final String mensagem;
+
+  /// Tamanho da mensagem. Valor padrão é o mesmo do Flutter.
+  final double? mensagemFontSize;
+
+  /// Padding em torno da mensagem. Valor padrão é [EdgeInsets.all(8.0)]
+  final EdgeInsets? mensagemPadding;
+
+  /// Função chamada ao apertar botão TENTAR NOVAMENTE. O botão só é exibido se
+  /// o parâmetro receber um valor.
+  final void Function()? onTryAgain;
+
+  /// cor no fundo do botão. Valor é atribuído ao
+  /// [backgroundColor] do [ButtonStyle].
+  final Color? tryAgainBackgroundColor;
+
+  /// Cor do texto dentro do botão de TENTAR NOVAMENTE. Valor é atribuído ao
+  /// [foregroundColor] do [ButtonStyle].
+  final Color? tryAgainTextColor;
 
   @override
   Widget build(BuildContext context) {
