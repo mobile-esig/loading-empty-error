@@ -31,8 +31,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void _incrementCounter() {}
-
   @override
   Widget build(BuildContext context) {
     List<Widget> widgets = [
@@ -96,11 +94,6 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: Divider(thickness: 4, color: Colors.black),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }
