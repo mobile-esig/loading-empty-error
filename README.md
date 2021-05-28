@@ -11,4 +11,5 @@ Este package surgiu da ideia de juntar widgets autorais comumente usados por qua
     Enviar e-mail: mobile@esig.group
 
 ## Licença
+
     Copyright (c) 2020 ESIG Group

@@ -23,19 +23,9 @@ class EsigTextButton extends StatelessWidget {
       ),
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        // padding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(),
         backgroundColor: corFundo,
       ),
     );
   }
 }
-
-/**
-bordas == true
-                ? BorderSide(
-                    width: 1.0,
-                    color: corTexto ?? Colors.grey,
-                  )
-                : null,
- */
