@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Exemplos de erros, carregamentos e vazios',
+      title: 'Exemplos das janelas de diálogo',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
