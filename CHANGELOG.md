@@ -1,3 +1,8 @@
+## [1.0.2] - WIP: Refatora botão do custom_dialog
+
+    - Filho dos botões do custom_dialog são Text() ao invés de String
+    - Efeito de Splash dos botões do custom_dialog corrigidos
+
 ## [1.0.1] - Implementa Dialog e botão
 
     - Adiciona `custom_dialog.dart`
