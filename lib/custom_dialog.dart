@@ -15,17 +15,17 @@ class EsigDialogWidget extends StatelessWidget {
   final double? tamanhoMensagem;
 
   final void Function()? onPressedPrincipal;
-  final String? textoPrincipal;
+  final Text? textoPrincipal;
 
   final void Function()? onPressedSecundario;
-  final String? textoSecundario;
+  final Text? textoSecundario;
 
   final void Function()? onPressedTerciario;
-  final String? textoTerciario;
+  final Text? textoTerciario;
 
   final Axis? direcaoBotoes;
 
-  const EsigDialogWidget({
+  EsigDialogWidget({
     Key? key,
     this.icone,
     this.titulo,
@@ -44,6 +44,7 @@ class EsigDialogWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textoPadrao = Text('OK');
     final double alturaBotao = 40;
     final Widget divider = direcaoBotoes == Axis.vertical
         ? Divider(height: 1)
@@ -52,19 +53,19 @@ class EsigDialogWidget extends StatelessWidget {
     List<Widget> botoes = [
       if (onPressedPrincipal != null)
         EsigTextButton(
-          texto: textoPrincipal ?? 'OK',
+          texto: textoPrincipal ?? textoPadrao,
           onPressed: onPressedPrincipal,
         ),
       if (onPressedSecundario != null) divider,
       if (onPressedSecundario != null)
         EsigTextButton(
-          texto: textoSecundario ?? 'OK',
+          texto: textoSecundario ?? textoPadrao,
           onPressed: onPressedSecundario,
         ),
       if (onPressedTerciario != null) divider,
       if (onPressedTerciario != null)
         EsigTextButton(
-          texto: textoTerciario ?? 'OK',
+          texto: textoTerciario ?? textoPadrao,
           onPressed: onPressedTerciario,
         )
     ];
@@ -92,6 +93,7 @@ class EsigDialogWidget extends StatelessWidget {
             height: alturaBotoes,
             child: Flex(
               mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               direction: direcaoBotoes ?? Axis.horizontal,
               children: botoes
                   .map(

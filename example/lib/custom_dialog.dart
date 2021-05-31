@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             EsigTextButton(
-              texto: 'Abrir dialog vertical',
+              texto: Text('Abrir dialog vertical'),
               onPressed: () {
                 showDialog(
                   context: context,
@@ -52,15 +52,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     titulo: 'Título do alert',
                     tamanhoTitulo: 14,
                     onPressedPrincipal: () {},
-                    textoPrincipal: 'SIM',
+                    textoPrincipal: Text('SIM'),
                     onPressedSecundario: () {},
-                    textoSecundario: 'NÃO',
+                    textoSecundario: Text('NÃO'),
                   ),
                 );
               },
             ),
             EsigTextButton(
-              texto: 'Abrir dialog horizontal',
+              texto: Text('Abrir dialog horizontal'),
               onPressed: () {
                 showDialog(
                   context: context,
@@ -74,9 +74,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     titulo: 'Título do alert',
                     tamanhoTitulo: 14,
                     onPressedPrincipal: () {},
-                    textoPrincipal: 'SIM',
+                    textoPrincipal: Text('SIM'),
                     onPressedSecundario: () {},
-                    textoSecundario: 'NÃO',
+                    textoSecundario: Text('NÃO'),
                   ),
                 );
               },
@@ -89,9 +89,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     'Mensagem horizontal exemplificada diretamente na tela',
                 direcaoBotoes: Axis.horizontal,
                 onPressedPrincipal: () {},
-                textoPrincipal: 'SIM',
+                textoPrincipal: Text('SIM'),
                 onPressedSecundario: () {},
-                textoSecundario: 'NÃO',
+                textoSecundario: Text('NÃO'),
               ),
             ),
             Container(
@@ -101,9 +101,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 mensagem: 'Mensagem vertical',
                 direcaoBotoes: Axis.vertical,
                 onPressedPrincipal: () {},
-                textoPrincipal: 'SIM BEM GRANDE',
+                textoPrincipal: Text('SIM BEM GRANDE'),
                 onPressedSecundario: () {},
-                textoSecundario: 'NÃO BEM GRANDE TAMBÉM',
+                textoSecundario: Text('NÃO BEM GRANDE TAMBÉM'),
               ),
             ),
           ],
