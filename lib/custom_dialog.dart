@@ -4,27 +4,11 @@ import 'package:flutter/material.dart';
 
 import 'botao_dialog.dart';
 
+/// Dialog destinado a apresentar instruções, e possivelmente opções, ao usuário.
 class EsigDialogWidget extends StatelessWidget {
-  final Widget? icone;
-
-  final String? titulo;
-  final double? tamanhoTitulo;
-  final EdgeInsets? paddingTitulo;
-
-  final String mensagem;
-  final double? tamanhoMensagem;
-
-  final void Function()? onPressedPrincipal;
-  final Text? textoPrincipal;
-
-  final void Function()? onPressedSecundario;
-  final Text? textoSecundario;
-
-  final void Function()? onPressedTerciario;
-  final Text? textoTerciario;
-
-  final Axis? direcaoBotoes;
-
+  /// TODO(victor): testar se valores são válidos.
+  /// Caso o 'onPressed' de um botão é diferente de nulo, o texto correspondente
+  /// deve ser também não nulo.
   EsigDialogWidget({
     Key? key,
     this.icone,
@@ -41,6 +25,54 @@ class EsigDialogWidget extends StatelessWidget {
     this.textoTerciario,
     this.paddingTitulo,
   }) : super(key: key);
+
+  /// Ícone em cima do título
+  final Widget? icone;
+
+  /// Texto principal, exibido em negrito abaixo do ícone
+  final String? titulo;
+
+  /// Tamanho do título, valor padrão é o mesmo do Flutter
+  final double? tamanhoTitulo;
+
+  /// Paddging em torno do título
+  final EdgeInsets? paddingTitulo;
+
+  /// Texto secundário, exibido abaixo do título
+  final String mensagem;
+
+  /// Tamanho do texto secundário
+  final double? tamanhoMensagem;
+
+  /// Função executada ao pressionar o [TextButton] principal. Se nenhum valor
+  /// for fornecido, o botão não será exibido.
+  final void Function()? onPressedPrincipal;
+
+  /// Texto dentro do botão principal
+  final Text? textoPrincipal;
+
+  /// Função executada ao pressionar o [TextButton] secundário. Se nenhum valor
+  /// for fornecido, o botão não será exibido. Este botão aparece ao lado
+  /// esquerdo ou abaixo do principal, dependendo da orientação escolhida em
+  /// [direcaoBotoes]
+  final void Function()? onPressedSecundario;
+
+  /// Texto dentro do botão secundário
+  final Text? textoSecundario;
+
+  /// Função executada ao pressionar o [TextButton] terciário. Se nenhum valor
+  /// for fornecido, o botão não será exibido. Este botão aparece ao lado
+  /// esquerdo ou abaixo do secundário, dependendo da orientação escolhida em
+  /// [direcaoBotoes]
+  final void Function()? onPressedTerciario;
+
+  /// Texto dentro do botão terciário
+  final Text? textoTerciario;
+
+  /// Direção dos botões dentro do [Dialog]. Para opções mais verbosas
+  /// recomenda-se usar os botões na vertical. Para opções com apenas uma
+  /// palavra, pode-se usar os botões na horizontal.
+  final Axis? direcaoBotoes;
 
   @override
   Widget build(BuildContext context) {
