@@ -1,6 +1,7 @@
 name: loading_empty_error
 description: Conjunto de widgets úteis em vários apps da ESIG.
 version: 1.1.0
+homepage: https://github.com/mobile-esig/loading-empty-error
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
