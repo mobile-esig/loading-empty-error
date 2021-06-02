@@ -1,3 +1,8 @@
+## [1.1.1] - EsigListOption e EsigDialogWidget
+
+    - Adiciona o widget `EsigListOption()` com exemplo e documentação parcial
+    - Corrige altura do `EsigDialogWidget` quando não há opções para mostrar e a orientação é configurada como Horizontal.
+
 ## [1.1.0] - Custom Dialog e RoundedAvatarWidget()
 
     - Filho dos botões do custom_dialog são Text() ao invés de String
