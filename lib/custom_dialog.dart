@@ -102,9 +102,12 @@ class EsigDialogWidget extends StatelessWidget {
         )
     ];
 
-    final double alturaBotoes = direcaoBotoes == Axis.vertical
-        ? botoes.whereType<EsigTextButton>().length * alturaBotao
-        : alturaBotao;
+    double alturaBotoes = 0;
+    if (direcaoBotoes == Axis.vertical) {
+      alturaBotoes = botoes.whereType<EsigTextButton>().length * alturaBotao;
+    } else if (botoes.any((b) => b is EsigTextButton)) {
+      alturaBotoes = 40;
+    }
 
     return Dialog(
       child: Column(

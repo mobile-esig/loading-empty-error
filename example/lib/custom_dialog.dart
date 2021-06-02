@@ -81,30 +81,33 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
             ),
-            Container(
-              height: 300,
-              child: EsigDialogWidget(
-                titulo: 'Título Horizontal',
-                mensagem:
-                    'Mensagem horizontal exemplificada diretamente na tela',
-                direcaoBotoes: Axis.horizontal,
-                onPressedPrincipal: () {},
-                textoPrincipal: Text('SIM'),
-                onPressedSecundario: () {},
-                textoSecundario: Text('NÃO'),
-              ),
+            EsigDialogWidget(
+              titulo: 'Exemplo Vertical',
+              mensagem: 'dialog sem opções',
+              direcaoBotoes: Axis.vertical,
             ),
-            Container(
-              height: 300,
-              child: EsigDialogWidget(
-                titulo: 'Título Vertical exemplificado diretamente na tela',
-                mensagem: 'Mensagem vertical',
-                direcaoBotoes: Axis.vertical,
-                onPressedPrincipal: () {},
-                textoPrincipal: Text('SIM BEM GRANDE'),
-                onPressedSecundario: () {},
-                textoSecundario: Text('NÃO BEM GRANDE TAMBÉM'),
-              ),
+            EsigDialogWidget(
+              titulo: 'Exemplo Horizontal',
+              mensagem: 'dialog sem opções',
+              direcaoBotoes: Axis.horizontal,
+            ),
+            EsigDialogWidget(
+              titulo: 'Título Horizontal',
+              mensagem: 'Mensagem horizontal exemplificada diretamente na tela',
+              direcaoBotoes: Axis.horizontal,
+              onPressedPrincipal: () {},
+              textoPrincipal: Text('SIM'),
+              onPressedSecundario: () {},
+              textoSecundario: Text('NÃO'),
+            ),
+            EsigDialogWidget(
+              titulo: 'Título Vertical exemplificado diretamente na tela',
+              mensagem: 'Mensagem vertical',
+              direcaoBotoes: Axis.vertical,
+              onPressedPrincipal: () {},
+              textoPrincipal: Text('SIM BEM GRANDE'),
+              onPressedSecundario: () {},
+              textoSecundario: Text('NÃO BEM GRANDE TAMBÉM'),
             ),
           ],
         ),
