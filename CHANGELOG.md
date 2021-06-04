@@ -1,3 +1,10 @@
+## [2.0.0] - EsigListOptionWidget e EsigContainerWidget
+
+    - Renomeia `EsigListOption` para `EsigListOptionWidget`
+    - Adiciona o widget `EsigContainerWidget`, que serve de base para os containers usados nos app
+    - Implementa novo `EsigListOptionWidget` usando o `EsigContainerWidget`
+    - Adiciona exemplo de `EsigContainerWidget` em `example/lib/list_option.dart`
+
 ## [1.1.1] - EsigListOption e EsigDialogWidget
 
     - Adiciona o widget `EsigListOption()` com exemplo e documentação parcial

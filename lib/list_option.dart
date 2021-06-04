@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:loading_empty_error/esig_container.dart';
 
-class EsigListOption extends StatelessWidget {
+class EsigListOptionWidget extends StatelessWidget {
   /// Lista de Widgets enfileirados numa [Row] à esquerda da seta.
   final List<Widget> children;
 
@@ -20,7 +21,7 @@ class EsigListOption extends StatelessWidget {
   /// Função executada ao clicar na opção.
   final void Function()? onTap;
 
-  const EsigListOption({
+  const EsigListOptionWidget({
     Key? key,
     required this.children,
     this.corSeta = Colors.grey,
@@ -32,25 +33,19 @@ class EsigListOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(3),
-        color: corFundo,
-        border: Border.all(width: 1, color: corBorda!),
-      ),
-      child: InkWell(
-        onTap: onTap,
-        child: Row(
-          children: [
-            ...children,
-            Icon(
-              Icons.chevron_right_rounded,
-              color: corSeta,
-              size: tamanhoSeta,
-            ),
-          ],
-        ),
+    return EsigContainerWidget(
+      onTap: onTap,
+      corBorda: corBorda,
+      corFundo: corFundo,
+      child: Row(
+        children: [
+          ...children,
+          Icon(
+            Icons.chevron_right_rounded,
+            color: corSeta,
+            size: tamanhoSeta,
+          ),
+        ],
       ),
     );
   }

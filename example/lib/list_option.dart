@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loading_empty_error/custom_dialog.dart';
 
 import 'package:loading_empty_error/list_option.dart';
+import 'package:loading_empty_error/esig_container.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,7 +33,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     List<Widget> opcoes = [
-      EsigListOption(
+      EsigContainerWidget(
+        child: Text(
+            'Sou um Container padrão. Os widgets abaixo são feitos a partir de mim.'),
+      ),
+      EsigListOptionWidget(
         children: [
           Image.asset(
             'assets/error.png',
@@ -61,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         },
       ),
-      EsigListOption(
+      EsigListOptionWidget(
         children: [
           Image.asset(
             'assets/loading.png',
@@ -84,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         },
       ),
-      EsigListOption(
+      EsigListOptionWidget(
         children: [
           Expanded(
             child: Column(
