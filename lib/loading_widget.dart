@@ -16,6 +16,8 @@ class EsigLoadingWidget extends StatelessWidget {
     required this.mensagem,
     this.mensagemFontSize,
     this.colorIndicator,
+    this.altura,
+    this.largura,
   }) : super(key: key);
 
   /// Caminho do asset declarado no [pubspec.yaml]. A imagem está configurada
@@ -30,6 +32,8 @@ class EsigLoadingWidget extends StatelessWidget {
   /// e [CIRCULAR]. Valor padrão é [VAZIO].
   final LoadingIndicator loadingIndicator;
 
+  /// Padding aplicado ao indicador de carregamento. Valor padrão é
+  /// [EdgeInsets.all(8.0)]
   final EdgeInsets? paddingIndicator;
 
   /// Cor no indicador de progresso.
@@ -41,19 +45,53 @@ class EsigLoadingWidget extends StatelessWidget {
   /// Tamanho da mensagem. Valor padrão é o mesmo do Flutter.
   final double? mensagemFontSize;
 
+  /// Altura total do widget. Parâmetro serve para evitar usar o código abaixo
+  /// toda vez que implementar este Widget.
+  /// ```dart
+  ///  Container(
+  ///    height: altura,
+  ///    child: EsigLoadingWidget()
+  ///  ),
+  /// ```
+  ///  Os itens serão alinhados no centro da altura desejada.
+  final double? altura;
+
+  /// Largura total do widget. Parâmetro serve para evitar usar o código abaixo
+  /// toda vez que implementar este Widget.
+  /// ```dart
+  ///  Container(
+  ///    width: largura,
+  ///    child: EsigLoadingWidget()
+  ///  ),
+  /// ```
+  /// Os itens serão alinhados no centro da largura desejada.
+  final double? largura;
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        ilustracaoAsset != null ? buildIlustracao() : Container(),
-        loadingIndicator != LoadingIndicator.VAZIO
-            ? buildLoadingIndicator()
-            : Container(),
-        buildMensagem(),
-      ],
+    return Container(
+      width: largura,
+      height: altura,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ilustracaoAsset != null ? buildIlustracao() : Container(),
+          loadingIndicator != LoadingIndicator.VAZIO
+              ? buildLoadingIndicator()
+              : Container(),
+          buildMensagem(),
+        ],
+      ),
     );
   }
+
+  Container buildIlustracao() => Container(
+        constraints: tamanhoIlustracao,
+        child: Image.asset(
+          ilustracaoAsset!,
+          fit: BoxFit.contain,
+        ),
+      );
 
   Widget buildLoadingIndicator() => Padding(
         padding: paddingIndicator ?? EdgeInsets.all(8.0),
@@ -66,13 +104,5 @@ class EsigLoadingWidget extends StatelessWidget {
         mensagem,
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: mensagemFontSize),
-      );
-
-  Container buildIlustracao() => Container(
-        constraints: tamanhoIlustracao,
-        child: Image.asset(
-          ilustracaoAsset!,
-          fit: BoxFit.contain,
-        ),
       );
 }

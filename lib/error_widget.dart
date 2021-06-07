@@ -18,6 +18,8 @@ class EsigErrorWidget extends StatelessWidget {
     this.onTryAgain,
     this.tryAgainBackgroundColor,
     this.tryAgainTextColor,
+    this.altura,
+    this.largura,
   }) : super(key: key);
 
   /// Caminho do asset declarado no [pubspec.yaml]. A imagem está configurada
@@ -57,17 +59,42 @@ class EsigErrorWidget extends StatelessWidget {
   /// [foregroundColor] do [ButtonStyle].
   final Color? tryAgainTextColor;
 
+  /// Altura total do widget. Parâmetro serve para evitar usar o código abaixo
+  /// toda vez que implementar este Widget.
+  /// ```dart
+  ///  Container(
+  ///    height: altura,
+  ///    child: EsigErrorWidget()
+  ///  ),
+  /// ```
+  ///  Os itens serão alinhados no centro da altura desejada.
+  final double? altura;
+
+  /// Largura total do widget. Parâmetro serve para evitar usar o código abaixo
+  /// toda vez que implementar este Widget.
+  /// ```dart
+  ///  Container(
+  ///    width: largura,
+  ///    child: EsigErrorWidget()
+  ///  ),
+  /// ```
+  /// Os itens serão alinhados no centro da largura desejada.
+  final double? largura;
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        ilustracaoAsset != null ? buildIlustracao() : Container(),
-        titulo != null ? buildTitulo() : Container(),
-        buildMensagem(),
-        onTryAgain != null ? botaoRefresh(context) : Container()
-      ],
+    return Container(
+      width: largura,
+      height: altura,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          ilustracaoAsset != null ? buildIlustracao() : Container(),
+          titulo != null ? buildTitulo() : Container(),
+          buildMensagem(),
+          onTryAgain != null ? botaoRefresh(context) : Container()
+        ],
+      ),
     );
   }
 

@@ -1,3 +1,9 @@
+## [2.0.1] - EsigChip
+
+    - Adiciona `EsigChipWidget` com exemplo
+    - Adiciona parâmetros **altura** e **largura** nos `EsigLoadingWidget`, `EsigEmptyWidget` e `EsigErrorWidget`
+    - Documenta `EsigTextButton` e `EsigContainerWidget`
+
 ## [2.0.0] - EsigListOptionWidget e EsigContainerWidget
 
     - Renomeia `EsigListOption` para `EsigListOptionWidget`

@@ -36,25 +36,20 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(title: Text(widget.title)),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(top: 16),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              for (var i = 10; i > 0; i--)
-                Row(
-                  children: List.generate(
-                    i,
-                    (index) => EsigRoundedAvatarWidget(
-                      largura: MediaQuery.of(context).size.width / i,
-                      urlImagem: urlImage,
-                      // borderRadius: 50,
-                      corBorda: Colors.black,
-                    ),
+        child: Column(
+          children: [
+            for (var i = 10; i > 0; i--)
+              Row(
+                children: List.generate(
+                  i,
+                  (index) => EsigRoundedAvatarWidget(
+                    largura: MediaQuery.of(context).size.width / i,
+                    urlImagem: urlImage,
+                    corBorda: Colors.black,
                   ),
                 ),
-              Text('Is that enough?')
-            ],
-          ),
+              ),
+          ],
         ),
       ),
     );

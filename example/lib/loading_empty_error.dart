@@ -35,45 +35,40 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     List<Widget> widgets = [
       SizedBox(height: 30),
-      Container(
-        width: MediaQuery.of(context).size.width / 1.5,
-        child: EsigErrorWidget(
-          mensagem: 'Erro ao carregar mensagem de erro mínima',
-        ),
+      EsigErrorWidget(
+        altura: 100,
+        mensagem: 'Erro ao carregar mensagem de erro mínima',
       ),
-      Container(
-        width: MediaQuery.of(context).size.width / 1.5,
-        child: EsigErrorWidget(
-          ilustracaoAsset: 'assets/error.png',
-          tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
-          titulo: 'Ops...',
-          tituloFontSize: 20,
-          mensagem: 'Erro ao carregar mensagem de erro completa',
-          mensagemFontSize: 16,
-          onTryAgain: () {
-            print('refreshing app');
-          },
-          tryAgainBackgroundColor: Colors.yellowAccent,
-          tryAgainTextColor: Colors.black,
-        ),
+      EsigErrorWidget(
+        ilustracaoAsset: 'assets/error.png',
+        tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
+        titulo: 'Ops...',
+        tituloFontSize: 20,
+        mensagem: 'Erro ao carregar mensagem de erro completa',
+        mensagemFontSize: 16,
+        onTryAgain: () {
+          print('refreshing app');
+        },
+        tryAgainBackgroundColor: Colors.yellowAccent,
+        tryAgainTextColor: Colors.black,
       ),
-      Container(
-        child: EsigLoadingWidget(
-          mensagem: 'Preparando sua mensagem de carregamento mínima...',
-        ),
+      EsigLoadingWidget(
+        altura: 100,
+        mensagem: 'Preparando sua mensagem de carregamento mínima...',
       ),
-      Container(
-        child: EsigLoadingWidget(
-          ilustracaoAsset: 'assets/loading.png',
-          tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
-          paddingIndicator: EdgeInsets.all(20),
-          loadingIndicator: LoadingIndicator.LINEAR,
-          mensagem: 'Preparando sua mensagem de carregamento completa...',
-          mensagemFontSize: 16,
-        ),
+      EsigLoadingWidget(
+        ilustracaoAsset: 'assets/loading.png',
+        tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
+        paddingIndicator: EdgeInsets.all(20),
+        loadingIndicator: LoadingIndicator.LINEAR,
+        mensagem: 'Preparando sua mensagem de carregamento completa...',
+        mensagemFontSize: 16,
+        largura: MediaQuery.of(context).size.width / 2,
       ),
       EsigEmptyWidget(
-          mensagem: 'Não encontramos sua mensagem mínima de tela vazia'),
+        mensagem: 'Não encontramos sua mensagem mínima de tela vazia',
+        altura: 200,
+      ),
       EsigEmptyWidget(
         ilustracaoAsset: 'assets/empty.png',
         tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
@@ -90,9 +85,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView.separated(
         itemCount: widgets.length,
         itemBuilder: (context, index) => widgets[index],
-        separatorBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Divider(thickness: 4, color: Colors.black),
+        separatorBuilder: (context, index) => Divider(
+          thickness: 4,
+          height: 30,
         ),
       ),
     );

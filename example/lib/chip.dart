@@ -80,6 +80,19 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
+      Divider(height: 30),
+      EsigChipWidget(
+        direcao: Axis.vertical,
+        constraints: BoxConstraints.tightForFinite(height: 100, width: 100),
+        children: [
+          Text('Exemplo'.toUpperCase()),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text('Quadrado'.toUpperCase()),
+          ),
+          Text('E vertical'.toUpperCase()),
+        ],
+      ),
     ];
 
     return Scaffold(
