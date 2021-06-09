@@ -1,3 +1,9 @@
+## [2.0.2] - EsigChip
+
+    - Adiciona parâmetro padInterno no `EsigChipWidget`
+    - Documenta `EsigChipWidget`
+    - Atualiza exemplo para utilizar novo parâmetro
+
 ## [2.0.1] - EsigChip
 
     - Adiciona `EsigChipWidget` com exemplo

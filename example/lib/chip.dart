@@ -31,9 +31,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     List<Widget> chips = [
       EsigChipWidget(
+        padInterno: EdgeInsets.symmetric(horizontal: 6),
         constraints: BoxConstraints.tightForFinite(),
         children: [
-          SizedBox(width: 6),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 3.0),
             child: CircleAvatar(
@@ -43,39 +43,35 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SizedBox(width: 6),
           Text('Francisca Xavier'.toUpperCase()),
-          SizedBox(width: 6),
         ],
       ),
       Divider(height: 30),
       EsigChipWidget(
+        padInterno: EdgeInsets.symmetric(horizontal: 6),
         constraints: BoxConstraints.tightForFinite(),
         children: [
-          SizedBox(width: 6),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 3.0),
             child: Icon(
-              Icons.timer,
+              Icons.schedule,
               size: 20,
             ),
           ),
           SizedBox(width: 6),
           Text('de manhã'.toUpperCase()),
-          SizedBox(width: 6),
         ],
       ),
       Divider(height: 30),
       EsigChipWidget(
+        padInterno: EdgeInsets.symmetric(horizontal: 8),
         corFundo: Colors.blue[900],
         constraints: BoxConstraints.tightForFinite(),
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Text(
-              'matriculado'.toUpperCase(),
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+          Text(
+            'matriculado'.toUpperCase(),
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ],
