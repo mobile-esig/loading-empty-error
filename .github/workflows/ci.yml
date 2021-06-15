@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Dart
+name: Flutter package
 
 on:
   push:
@@ -34,6 +34,7 @@ jobs:
           name: test-results
           path: test-results.json
           reporter: flutter-json
-      - uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
+      - uses: codecov/codecov-action@v1
         with:
-          min_coverage: 0
+          file: ./coverage/lcov.info
+        
