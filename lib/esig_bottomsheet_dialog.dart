@@ -1,5 +1,3 @@
-//TODO: importar widget do projeto Aprendizagem em Casa
-
 import 'package:flutter/material.dart';
 
 class EsigBottomSheetDialog extends StatelessWidget {

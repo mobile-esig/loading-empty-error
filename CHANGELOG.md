@@ -1,3 +1,8 @@
+## [2.2.0] - EsigBottomSheet
+
+    - Adiciona `EsigBottomSheetDialog` e `EsigDebugBottomSheet`, ambos com exemplo em `example/lib/bottomsheet_dialog.dart`.
+    - Refatora documentação de vários Widget
+
 ## [2.0.2] - EsigChip
 
     - Adiciona parâmetro padInterno no `EsigChipWidget`
