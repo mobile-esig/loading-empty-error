@@ -32,7 +32,7 @@ class EsigDialogWidget extends StatelessWidget {
   /// Texto principal, exibido em negrito abaixo do ícone
   final String? titulo;
 
-  /// Tamanho do título, valor padrão é o mesmo do Flutter
+  /// Tamanho do título.
   final double? tamanhoTitulo;
 
   /// Paddging em torno do título

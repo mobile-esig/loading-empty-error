@@ -11,10 +11,10 @@ class EsigErrorWidget extends StatelessWidget {
     this.tamanhoIlustracao,
     this.titulo,
     this.tituloFontSize,
-    this.tituloPadding,
+    this.tituloPadding = const EdgeInsets.all(8.0),
     required this.mensagem,
     this.mensagemFontSize,
-    this.mensagemPadding,
+    this.mensagemPadding = const EdgeInsets.all(8.0),
     this.onTryAgain,
     this.tryAgainBackgroundColor,
     this.tryAgainTextColor,
@@ -32,20 +32,20 @@ class EsigErrorWidget extends StatelessWidget {
   /// Texto em negrito logo abaixo da ilustração e acima da [menssagem].
   final String? titulo;
 
-  /// Tamanho do texto no título. Valor padrão é o mesmo do Flutter.
+  /// Tamanho do texto no título.
   final double? tituloFontSize;
 
-  /// Padding em torno do título. Padrão é [EdgeInsets.all(8.0)].
-  final EdgeInsets? tituloPadding;
+  /// Padding em torno do título.
+  final EdgeInsets tituloPadding;
 
   /// Mensagem explicando o motivo deste widget aparecer.
   final String mensagem;
 
-  /// Tamanho da mensagem. Valor padrão é o mesmo do Flutter.
+  /// Tamanho da mensagem.
   final double? mensagemFontSize;
 
-  /// Padding em torno da mensagem. Valor padrão é [EdgeInsets.all(8.0)]
-  final EdgeInsets? mensagemPadding;
+  /// Padding em torno da mensagem.
+  final EdgeInsets mensagemPadding;
 
   /// Função chamada ao apertar botão TENTAR NOVAMENTE. O botão só é exibido se
   /// o parâmetro receber um valor.
@@ -89,16 +89,16 @@ class EsigErrorWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          ilustracaoAsset != null ? buildIlustracao() : Container(),
-          titulo != null ? buildTitulo() : Container(),
-          buildMensagem(),
-          onTryAgain != null ? botaoRefresh(context) : Container()
+          ilustracaoAsset != null ? _buildIlustracao() : Container(),
+          titulo != null ? _buildTitulo() : Container(),
+          _buildMensagem(),
+          onTryAgain != null ? _buildBotaoRefresh(context) : Container()
         ],
       ),
     );
   }
 
-  ElevatedButton botaoRefresh(BuildContext context) => ElevatedButton(
+  Widget _buildBotaoRefresh(BuildContext context) => ElevatedButton(
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(tryAgainBackgroundColor),
           foregroundColor: MaterialStateProperty.all(tryAgainTextColor),
@@ -112,9 +112,8 @@ class EsigErrorWidget extends StatelessWidget {
         ),
       );
 
-  Padding buildMensagem() => Padding(
-        padding:
-            mensagemPadding != null ? mensagemPadding! : EdgeInsets.all(8.0),
+  Widget _buildMensagem() => Padding(
+        padding: mensagemPadding,
         child: Text(
           mensagem,
           textAlign: TextAlign.center,
@@ -122,8 +121,8 @@ class EsigErrorWidget extends StatelessWidget {
         ),
       );
 
-  Padding buildTitulo() => Padding(
-        padding: tituloPadding != null ? tituloPadding! : EdgeInsets.all(8.0),
+  Widget _buildTitulo() => Padding(
+        padding: tituloPadding,
         child: Text(
           titulo!,
           textAlign: TextAlign.center,
@@ -135,7 +134,7 @@ class EsigErrorWidget extends StatelessWidget {
         ),
       );
 
-  Container buildIlustracao() => Container(
+  Widget _buildIlustracao() => Container(
         constraints: tamanhoIlustracao,
         child: Image.asset(
           ilustracaoAsset!,

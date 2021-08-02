@@ -9,10 +9,10 @@ class EsigEmptyWidget extends StatelessWidget {
     this.tamanhoIlustracao,
     this.titulo,
     this.tituloFontSize,
-    this.tituloPadding,
+    this.tituloPadding = const EdgeInsets.all(8.0),
     required this.mensagem,
     this.mensagemFontSize,
-    this.mensagemPadding,
+    this.mensagemPadding = const EdgeInsets.all(8.0),
     this.altura,
     this.largura,
   }) : super(key: key);
@@ -27,20 +27,20 @@ class EsigEmptyWidget extends StatelessWidget {
   /// Texto em negrito logo abaixo da ilustração e acima da [menssagem].
   final String? titulo;
 
-  /// Tamanho do texto no título. Valor padrão é o mesmo do Flutter.
+  /// Tamanho do texto no título.
   final double? tituloFontSize;
 
   /// Padding em torno do título. Padrão é [EdgeInsets.all(8.0)].
-  final EdgeInsets? tituloPadding;
+  final EdgeInsets tituloPadding;
 
   /// Mensagem explicando o motivo deste widget aparecer.
   final String mensagem;
 
-  /// Tamanho da mensagem. Valor padrão é o mesmo do Flutter.
+  /// Tamanho da mensagem.
   final double? mensagemFontSize;
 
-  /// Padding em torno da mensagem. Valor padrão é [EdgeInsets.all(8.0)]
-  final EdgeInsets? mensagemPadding;
+  /// Padding em torno da mensagem.
+  final EdgeInsets mensagemPadding;
 
   /// Altura total do widget. Parâmetro serve para evitar usar o código abaixo
   /// toda vez que implementar este Widget.
@@ -72,15 +72,15 @@ class EsigEmptyWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ilustracaoAsset != null ? buildIlustracao() : Container(),
-          titulo != null ? buildTitulo() : Container(),
-          buildMensagem()
+          ilustracaoAsset != null ? _buildIlustracao() : Container(),
+          titulo != null ? _buildTitulo() : Container(),
+          _buildMensagem()
         ],
       ),
     );
   }
 
-  Container buildIlustracao() => Container(
+  Widget _buildIlustracao() => Container(
         constraints: tamanhoIlustracao,
         child: Image.asset(
           ilustracaoAsset!,
@@ -88,8 +88,8 @@ class EsigEmptyWidget extends StatelessWidget {
         ),
       );
 
-  Padding buildTitulo() => Padding(
-        padding: tituloPadding != null ? tituloPadding! : EdgeInsets.all(8.0),
+  Widget _buildTitulo() => Padding(
+        padding: tituloPadding,
         child: Text(
           titulo!,
           textAlign: TextAlign.center,
@@ -101,9 +101,8 @@ class EsigEmptyWidget extends StatelessWidget {
         ),
       );
 
-  Padding buildMensagem() => Padding(
-        padding:
-            mensagemPadding != null ? mensagemPadding! : EdgeInsets.all(8.0),
+  Widget _buildMensagem() => Padding(
+        padding: mensagemPadding,
         child: Text(
           mensagem,
           textAlign: TextAlign.center,

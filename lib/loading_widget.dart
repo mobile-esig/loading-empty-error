@@ -29,7 +29,7 @@ class EsigLoadingWidget extends StatelessWidget {
 
   /// Tipo do indicador de progresso padrão do Flutter a ser exibido. Opções
   /// estão disponíveis em [loading_indicator_type.dart] e são [VAZIO], [LINEAR],
-  /// e [CIRCULAR]. Valor padrão é [VAZIO].
+  /// e [CIRCULAR].
   final LoadingIndicator loadingIndicator;
 
   /// Padding aplicado ao indicador de carregamento. Valor padrão é
@@ -42,7 +42,7 @@ class EsigLoadingWidget extends StatelessWidget {
   /// Mensagem explicando o motivo deste widget aparecer.
   final String mensagem;
 
-  /// Tamanho da mensagem. Valor padrão é o mesmo do Flutter.
+  /// Tamanho da mensagem.
   final double? mensagemFontSize;
 
   /// Altura total do widget. Parâmetro serve para evitar usar o código abaixo

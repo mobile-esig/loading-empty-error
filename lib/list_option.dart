@@ -16,16 +16,16 @@ class EsigListOptionWidget extends StatelessWidget {
   final List<Widget> children;
 
   /// Cor da seta à esquerda. Para não mostrar a seta escolher a mesma cor de
-  /// fundo. Valor padrão é [Colors.grey].
+  /// fundo.
   final Color? corSeta;
 
-  /// Tamanho da seta. Valor padrão é 20.
+  /// Tamanho da seta.
   final double? tamanhoSeta;
 
-  /// Cor da borda da opção. Valor padrão é [Color(0xFFE4EDF5)].
+  /// Cor da borda da opção.
   final Color? corBorda;
 
-  /// Cor de fundo da opção. Valor padrão é o mesmo do [Container] do Flutter
+  /// Cor de fundo da opção.
   final Color? corFundo;
 
   /// Função executada ao clicar na opção.

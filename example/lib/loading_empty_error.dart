@@ -54,14 +54,16 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       EsigLoadingWidget(
         altura: 100,
-        mensagem: 'Preparando sua mensagem de carregamento mínima...',
+        largura: 100,
+        mensagem: 'Carregando mensagem mínima com tamanho 100x100...',
       ),
       EsigLoadingWidget(
         ilustracaoAsset: 'assets/loading.png',
         tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
         paddingIndicator: EdgeInsets.all(20),
         loadingIndicator: LoadingIndicator.LINEAR,
-        mensagem: 'Preparando sua mensagem de carregamento completa...',
+        mensagem:
+            'Preparando sua mensagem de carregamento completa com largura igual à metade da tela...',
         mensagemFontSize: 16,
         largura: MediaQuery.of(context).size.width / 2,
       ),
@@ -84,7 +86,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(title: Text(widget.title)),
       body: ListView.separated(
         itemCount: widgets.length,
-        itemBuilder: (context, index) => widgets[index],
+        itemBuilder: (context, index) => Align(
+          child: widgets[index],
+        ),
         separatorBuilder: (context, index) => Divider(
           thickness: 4,
           height: 30,

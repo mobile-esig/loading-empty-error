@@ -8,16 +8,25 @@ class EsigContainerWidget extends StatelessWidget {
     required this.child,
     this.corBorda = const Color(0xFFE4EDF5),
     this.corFundo = Colors.transparent,
+    this.padding = const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
+    this.margin = EdgeInsets.zero,
   }) : super(key: key);
 
-  /// Ação executada ao clicar no Widget. Valor padrão é [null].
+  /// Espaçamento interno aplicado ao Container. Valor padrão é
+  /// [EdgeInsets.symmetric(horizontal: 15, vertical: 9)]
+  final EdgeInsets? padding;
+
+  /// Espaçamento externo aplicado ao Container. Valor padrão é
+  /// [EdgeInsets.zero]
+  final EdgeInsets? margin;
+
+  /// Ação executada ao clicar no Widget.
   final void Function()? onTap;
 
-  /// Cor aplicada às bordas do [Container]. Valor padrão é [Color(0xFFE4EDF5)],
-  /// um cinza claro.
+  /// Cor aplicada às bordas do [Container].
   final Color? corBorda;
 
-  /// Cor de fundo do [Container]. Valor padrão é [Colors.transparent].
+  /// Cor de fundo do [Container].
   final Color? corFundo;
 
   /// Assim como o parâmetro [child] do [Container], é o seu conteúdo interno.
@@ -28,7 +37,8 @@ class EsigContainerWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 9),
+        margin: margin,
+        padding: padding,
         decoration: BoxDecoration(
           color: corFundo,
           borderRadius: BorderRadius.circular(3),
