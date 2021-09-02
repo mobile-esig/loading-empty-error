@@ -1,3 +1,8 @@
+## [2.2.X] - EsigBottomSheet
+
+    - Refatora `EsigBottomSheetDialog` para que o cabeçalho seja fixo ao topo e não deslizável.
+    - Adiciona mais parâmetros no `EsigDebugBottomSheet` par que seja mais personalizável.
+
 ## [2.2.0] - EsigBottomSheet
 
     - Adiciona `EsigBottomSheetDialog` e `EsigDebugBottomSheet`, ambos com exemplo em `example/lib/bottomsheet_dialog.dart`.

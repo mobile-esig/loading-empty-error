@@ -41,11 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             ElevatedButton(
+              child: Text('Abrir BottomSheetDialog'),
               onPressed: () async {
                 final result = await _showBottomSheet(42);
                 print('bottomSheet result: $result');
               },
-              child: Text('Abrir BottomSheetDialog'),
             ),
             ElevatedButton(
               onPressed: _showDebugBottomSheet,
@@ -72,10 +72,15 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
           EsigDebugSection(
-              titulo: 'stacktrace', conteudo: ['Ponha qualquer texto aqui']),
-          EsigDebugSection(titulo: 'message', conteudo: [
-            'O texto abaixo é padrão e aparece em todos os relatórios de debug.'
-          ]),
+            titulo: 'stacktrace',
+            conteudo: ['Ponha qualquer texto aqui'],
+          ),
+          EsigDebugSection(
+            titulo: 'message',
+            conteudo: [
+              'O texto abaixo é padrão e aparece em todos os relatórios de debug.'
+            ],
+          ),
         ],
       ),
     );
@@ -100,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Divider(height: 50),
+            SizedBox(height: 30),
             EsigChipWidget(
               children: [Text('Olá')],
             ),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EsigBottomSheetDialog extends StatelessWidget {
@@ -40,32 +41,37 @@ class EsigBottomSheetDialog extends StatelessWidget {
           topRight: Radius.circular(25),
         ),
       ),
-      child: SingleChildScrollView(
-        padding: padding,
-        child: Column(
-          children: [
-            SizedBox(height: 20),
-            _buildCabecalho(context),
-            child,
-          ],
-        ),
+      child: Column(
+        children: [
+          _buildCabecalho(context),
+          Divider(height: 1),
+          Flexible(
+            child: SingleChildScrollView(
+              padding: padding,
+              child: child,
+            ),
+          ),
+        ],
       ),
     );
   }
 
   Widget _buildCabecalho(BuildContext context) {
-    return Stack(
-      alignment: AlignmentDirectional.center,
-      children: [
-        Align(
-          alignment: Alignment.centerLeft,
-          child: GestureDetector(
-            child: closeIcon,
-            onTap: () => Navigator.pop(context, result),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      child: Stack(
+        alignment: AlignmentDirectional.center,
+        children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: GestureDetector(
+              child: closeIcon,
+              onTap: () => Navigator.pop(context, result),
+            ),
           ),
-        ),
-        titulo,
-      ],
+          titulo,
+        ],
+      ),
     );
   }
 }
