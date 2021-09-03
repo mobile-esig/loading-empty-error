@@ -1,7 +1,9 @@
-## [2.2.X] - EsigBottomSheet
+## [2.2.1] - EsigSnackBar
 
+    - Adiciona função para retornar ou apresentar `SnackBar`.
     - Refatora `EsigBottomSheetDialog` para que o cabeçalho seja fixo ao topo e não deslizável.
-    - Adiciona mais parâmetros no `EsigDebugBottomSheet` par que seja mais personalizável.
+    - Adiciona mais parâmetros no `EsigDebugBottomSheet` para que seja mais personalizável.
+    - No `EsigCustomDialog` há tratamento para qunado o texto do botão não é fornecido
 
 ## [2.2.0] - EsigBottomSheet
 

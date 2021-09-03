@@ -6,9 +6,6 @@ import 'botao_dialog.dart';
 
 /// Dialog destinado a apresentar instruções, e possivelmente opções, ao usuário.
 class EsigDialogWidget extends StatelessWidget {
-  /// TODO(victor): testar se valores são válidos.
-  /// Caso o 'onPressed' de um botão é diferente de nulo, o texto correspondente
-  /// deve ser também não nulo.
   EsigDialogWidget({
     Key? key,
     this.icone,
@@ -20,9 +17,9 @@ class EsigDialogWidget extends StatelessWidget {
     this.onPressedPrincipal,
     this.onPressedSecundario,
     this.onPressedTerciario,
-    this.textoPrincipal,
-    this.textoSecundario,
-    this.textoTerciario,
+    this.textoPrincipal = const Text('OK'),
+    this.textoSecundario = const Text('OK'),
+    this.textoTerciario = const Text('OK'),
     this.paddingTitulo,
   }) : super(key: key);
 
@@ -118,8 +115,8 @@ class EsigDialogWidget extends StatelessWidget {
             child: Column(
               children: [
                 icone ?? Container(),
-                titulo != null ? buildTitulo() : Container(),
-                buildMensagem(),
+                titulo != null ? _buildTitulo() : Container(),
+                _buildMensagem(),
               ],
             ),
           ),
@@ -142,7 +139,7 @@ class EsigDialogWidget extends StatelessWidget {
     );
   }
 
-  Text buildMensagem() => Text(
+  Widget _buildMensagem() => Text(
         mensagem,
         textAlign: TextAlign.center,
         style: TextStyle(
@@ -151,7 +148,7 @@ class EsigDialogWidget extends StatelessWidget {
         ),
       );
 
-  Widget buildTitulo() => Padding(
+  Widget _buildTitulo() => Padding(
         padding: paddingTitulo ?? EdgeInsets.symmetric(vertical: 10),
         child: Text(
           titulo!.toUpperCase(),

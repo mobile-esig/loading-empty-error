@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:loading_empty_error/esig_bottomsheet_dialog.dart';
+import 'package:loading_empty_error/bottomsheet_dialog.dart';
 
 class EsigDebugBottomSheet extends StatelessWidget {
   const EsigDebugBottomSheet({

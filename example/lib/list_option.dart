@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loading_empty_error/custom_dialog.dart';
 
 import 'package:loading_empty_error/list_option.dart';
-import 'package:loading_empty_error/esig_container.dart';
+import 'package:loading_empty_error/container.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,14 +16,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'Exemplos'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  final String title;
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -125,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     ];
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(title: Text('Exemplos das opções')),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
