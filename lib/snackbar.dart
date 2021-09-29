@@ -7,7 +7,7 @@ SnackBar? getEsigSnackBar(
   Color corFundo = Colors.grey,
   Color corTexto = Colors.white,
   IconData? icon = Icons.info,
-  double bottomPadding = 0,
+  EdgeInsets? padding,
   SnackBarAction? action,
 }) {
   final action = context == null
@@ -19,8 +19,13 @@ SnackBar? getEsigSnackBar(
         );
 
   final snackbar = SnackBar(
-    padding: EdgeInsets.symmetric(horizontal: 0).copyWith(
-      bottom: bottomPadding,
+    padding: EdgeInsets.symmetric(
+      horizontal: 0,
+    ).copyWith(
+      top: padding?.top,
+      right: padding?.right,
+      bottom: padding?.bottom,
+      left: padding?.left,
     ),
     backgroundColor: corFundo,
     duration: Duration(seconds: duracao),

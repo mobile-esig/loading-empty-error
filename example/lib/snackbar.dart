@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   'Tarefa realizada com sucesso.',
                   context: context,
                   duracao: 20,
-                  bottomPadding: 40,
+                  padding: EdgeInsets.only(bottom: 40),
                 );
               },
             ),

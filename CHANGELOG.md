@@ -1,3 +1,7 @@
+## [2.3.1] - EsigSnackBar
+
+    - Adiciona padding no Snackbar
+
 ## [2.2.1] - EsigSnackBar
 
     - Adiciona função para retornar ou apresentar `SnackBar`.
