@@ -6,12 +6,12 @@ import 'botao_dialog.dart';
 
 /// Dialog destinado a apresentar instruções, e possivelmente opções, ao usuário.
 class EsigDialogWidget extends StatelessWidget {
-  EsigDialogWidget({
+  EsigDialogWidget(this.mensagem,{
     Key? key,
     this.icone,
     this.titulo,
     this.tamanhoTitulo,
-    required this.mensagem,
+  
     this.tamanhoMensagem,
     this.direcaoBotoes = Axis.horizontal,
     this.onPressedPrincipal,

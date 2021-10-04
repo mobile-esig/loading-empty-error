@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 
 class EsigRoundedAvatarWidget extends StatelessWidget {
-  final double largura;
-  final String urlImagem;
-  final double? borderRadius;
-  final Color? corBorda;
-
-  const EsigRoundedAvatarWidget({
-    required this.largura,
-    required this.urlImagem,
+  const EsigRoundedAvatarWidget(
+    this.largura,
+    this.urlImagem, {
     this.borderRadius,
     this.corBorda,
   });
+
+  /// Largura do widget. É sempre igual à altura.
+  final double largura;
+
+  /// URL da imagem interna
+  final String urlImagem;
+
+  /// Raio da borda. Se nenhum valor for dado, é igual à [largura], o widget
+  /// forma um círculo.
+  final double? borderRadius;
+
+  /// Cor da borda. Valor padrão é [Colors.transparent].
+  final Color? corBorda;
 
   @override
   Widget build(BuildContext context) {

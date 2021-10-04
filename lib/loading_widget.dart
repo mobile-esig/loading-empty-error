@@ -7,13 +7,13 @@ import 'loading_indicator_type.dart';
 /// Widget apresentado durante o processamento de alguma tarefa realziada pelo
 /// app. Indica ao usuário que ele deve esperar a finalização de algo.
 class EsigLoadingWidget extends StatelessWidget {
-  const EsigLoadingWidget({
+  const EsigLoadingWidget(
+    this.mensagem, {
     Key? key,
     this.ilustracaoAsset,
     this.tamanhoIlustracao,
     this.loadingIndicator = LoadingIndicator.VAZIO,
     this.paddingIndicator,
-    required this.mensagem,
     this.mensagemFontSize,
     this.colorIndicator,
     this.altura,
@@ -75,17 +75,17 @@ class EsigLoadingWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ilustracaoAsset != null ? buildIlustracao() : Container(),
+          ilustracaoAsset != null ? _buildIlustracao() : Container(),
           loadingIndicator != LoadingIndicator.VAZIO
-              ? buildLoadingIndicator()
+              ? _buildLoadingIndicator()
               : Container(),
-          buildMensagem(),
+          _buildMensagem(),
         ],
       ),
     );
   }
 
-  Container buildIlustracao() => Container(
+  Container _buildIlustracao() => Container(
         constraints: tamanhoIlustracao,
         child: Image.asset(
           ilustracaoAsset!,
@@ -93,14 +93,14 @@ class EsigLoadingWidget extends StatelessWidget {
         ),
       );
 
-  Widget buildLoadingIndicator() => Padding(
+  Widget _buildLoadingIndicator() => Padding(
         padding: paddingIndicator ?? EdgeInsets.all(8.0),
         child: loadingIndicator == LoadingIndicator.CIRCULAR
-            ? CircularProgressIndicator()
-            : LinearProgressIndicator(),
+            ? CircularProgressIndicator(color: colorIndicator)
+            : LinearProgressIndicator(color: colorIndicator),
       );
 
-  Text buildMensagem() => Text(
+  Text _buildMensagem() => Text(
         mensagem,
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: mensagemFontSize),

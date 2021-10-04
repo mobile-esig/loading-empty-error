@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:loading_empty_error/container.dart';
 
 class EsigListOptionWidget extends StatelessWidget {
-  const EsigListOptionWidget({
+  const EsigListOptionWidget(this.children,{
     Key? key,
-    required this.children,
+    
     this.corSeta = Colors.grey,
     this.tamanhoSeta = 20,
     this.corBorda = const Color(0xFFE4EDF5),

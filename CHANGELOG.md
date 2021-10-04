@@ -1,3 +1,7 @@
+## [X.Y.Z] - TODO
+
+    - Corrije cor do indicador de carregamento no EsigLoadingWidget
+
 ## [2.3.1] - EsigSnackBar
 
     - Adiciona padding no Snackbar

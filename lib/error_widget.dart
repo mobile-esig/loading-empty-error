@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 /// Widgets distinado aos casos nos quais ocorreu um erro interno no app e
 /// alguma tarefa não pôde ser completada.
 class EsigErrorWidget extends StatelessWidget {
-  const EsigErrorWidget({
+  const EsigErrorWidget(this.mensagem,{
     Key? key,
     this.ilustracaoAsset,
     this.tamanhoIlustracao,
     this.titulo,
     this.tituloFontSize,
     this.tituloPadding = const EdgeInsets.all(8.0),
-    required this.mensagem,
+    
     this.mensagemFontSize,
     this.mensagemPadding = const EdgeInsets.all(8.0),
     this.onTryAgain,

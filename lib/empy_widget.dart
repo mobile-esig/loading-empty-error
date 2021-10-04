@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 /// Widget destinado aos casos nos quais a tela deveria contem informações úteis
 /// mas que, por algum motivo, não estão disponíveis.
 class EsigEmptyWidget extends StatelessWidget {
-  const EsigEmptyWidget({
+  const EsigEmptyWidget(this.mensagem,{
     Key? key,
     this.ilustracaoAsset,
     this.tamanhoIlustracao,
     this.titulo,
     this.tituloFontSize,
     this.tituloPadding = const EdgeInsets.all(8.0),
-    required this.mensagem,
+    
     this.mensagemFontSize,
     this.mensagemPadding = const EdgeInsets.all(8.0),
     this.altura,

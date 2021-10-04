@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:loading_empty_error/bottomsheet_dialog.dart';
 
+/// Mostra uma lista de erros preenchida manualmente.
+/// Destinado aos apps que não podem receber o Firebase como depedência.
 class EsigDebugBottomSheet extends StatelessWidget {
   const EsigDebugBottomSheet({
     Key? key,
@@ -10,8 +12,13 @@ class EsigDebugBottomSheet extends StatelessWidget {
     this.textAlign = TextAlign.start,
   }) : super(key: key);
 
+  /// Lista que erros a serem mostrados
   final List<EsigDebugSection> errors;
+
+  /// Alinhamento dos textos dentro da seção
   final TextAlign textAlign;
+
+  /// Altura no BottomSheet. Valor padrão é [MediaQuery.of(context).size.height / 1.1]
   final double? height;
 
   @override
