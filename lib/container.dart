@@ -29,7 +29,7 @@ class EsigContainerWidget extends StatelessWidget {
   /// Cor de fundo do [Container].
   final Color? corFundo;
 
-  /// Assim como o parâmetro [child] do [Container], é o seu conteúdo interno.
+  /// O seu conteúdo interno, assim como o parâmetro [child] do [Container].
   final Widget child;
 
   @override

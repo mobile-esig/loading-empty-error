@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
             'Sou um Container padrão. Os widgets abaixo são feitos a partir de mim.'),
       ),
       EsigListOptionWidget(
-        children: [
+         [
           Image.asset(
             'assets/error.png',
             width: 50,
@@ -58,15 +58,16 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             builder: (_) {
               return EsigDialogWidget(
+                'Você clicou na primeira opção',
                 titulo: 'Parabéns!',
-                mensagem: 'Você clicou na primeira opção',
+                
               );
             },
           );
         },
       ),
       EsigListOptionWidget(
-        children: [
+        [
           Image.asset(
             'assets/loading.png',
             width: 50,
@@ -81,15 +82,16 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             builder: (_) {
               return EsigDialogWidget(
+                'Você clicou na segunda opção',
                 titulo: 'Parabéns!',
-                mensagem: 'Você clicou na segunda opção',
+                
               );
             },
           );
         },
       ),
       EsigListOptionWidget(
-        children: [
+        [
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,8 +117,9 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             builder: (_) {
               return EsigDialogWidget(
+                'Você concluiu o tutorial',
                 titulo: 'Parabéns!',
-                mensagem: 'Você concluiu o tutorial',
+                
               );
             },
           );

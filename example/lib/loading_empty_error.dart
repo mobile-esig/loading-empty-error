@@ -35,15 +35,17 @@ class _MyHomePageState extends State<MyHomePage> {
     List<Widget> widgets = [
       SizedBox(height: 30),
       EsigErrorWidget(
+        'Erro ao carregar mensagem de erro mínima',
         altura: 100,
-        mensagem: 'Erro ao carregar mensagem de erro mínima',
+        
       ),
       EsigErrorWidget(
+        'Erro ao carregar mensagem de erro completa',
         ilustracaoAsset: 'assets/error.png',
         tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
         titulo: 'Ops...',
         tituloFontSize: 20,
-        mensagem: 'Erro ao carregar mensagem de erro completa',
+        
         mensagemFontSize: 16,
         onTryAgain: () {
           print('refreshing app');
@@ -52,30 +54,33 @@ class _MyHomePageState extends State<MyHomePage> {
         tryAgainTextColor: Colors.black,
       ),
       EsigLoadingWidget(
+        'Carregando mensagem mínima com tamanho 100x100...',
         altura: 100,
         largura: 100,
-        mensagem: 'Carregando mensagem mínima com tamanho 100x100...',
+        
       ),
       EsigLoadingWidget(
+        'Preparando sua mensagem de carregamento completa com largura igual à metade da tela...',
         ilustracaoAsset: 'assets/loading.png',
         tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
         paddingIndicator: EdgeInsets.all(20),
         loadingIndicator: LoadingIndicator.LINEAR,
-        mensagem:
-            'Preparando sua mensagem de carregamento completa com largura igual à metade da tela...',
+        
         mensagemFontSize: 16,
         largura: MediaQuery.of(context).size.width / 2,
       ),
       EsigEmptyWidget(
-        mensagem: 'Não encontramos sua mensagem mínima de tela vazia',
+        'Não encontramos sua mensagem mínima de tela vazia',
+        
         altura: 200,
       ),
       EsigEmptyWidget(
+        'Não encontramos sua mensagem completa de tela vazia',
         ilustracaoAsset: 'assets/empty.png',
         tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
         titulo: 'Ops...',
         tituloFontSize: 20,
-        mensagem: 'Não encontramos sua mensagem completa de tela vazia',
+        
         mensagemFontSize: 16,
       ),
       SizedBox(height: 60),

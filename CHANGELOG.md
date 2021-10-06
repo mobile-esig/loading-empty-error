@@ -1,6 +1,8 @@
-## [X.Y.Z] - TODO
+## [3.0.0] - Refatoração geral
 
     - Corrije cor do indicador de carregamento no EsigLoadingWidget
+    - Parâmetros obrigatórios são posicionais, ao invés de nomeados
+    - Criar testes para `EsigContainerWidget`
 
 ## [2.3.1] - EsigSnackBar
 

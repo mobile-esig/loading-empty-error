@@ -41,13 +41,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 showDialog(
                   context: context,
                   builder: (context) => EsigDialogWidget(
+                    'Mensagem do alert',
                     direcaoBotoes: Axis.vertical,
                     icone: Icon(
                       Icons.alarm,
                       size: 40,
                       color: Colors.blue,
                     ),
-                    mensagem: 'Mensagem do alert',
                     titulo: 'Título do alert',
                     tamanhoTitulo: 14,
                     onPressedPrincipal: () {},
@@ -64,12 +64,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 showDialog(
                   context: context,
                   builder: (context) => EsigDialogWidget(
+                    'Mensagem do alert',
                     direcaoBotoes: Axis.horizontal,
                     icone: Icon(
                       Icons.alarm,
                       color: Colors.blue,
                     ),
-                    mensagem: 'Mensagem do alert',
                     titulo: 'Título do alert',
                     tamanhoTitulo: 14,
                     onPressedPrincipal: () {},
@@ -81,18 +81,18 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             EsigDialogWidget(
+              'dialog sem opções',
               titulo: 'Exemplo Vertical',
-              mensagem: 'dialog sem opções',
               direcaoBotoes: Axis.vertical,
             ),
             EsigDialogWidget(
+              'dialog sem opções',
               titulo: 'Exemplo Horizontal',
-              mensagem: 'dialog sem opções',
               direcaoBotoes: Axis.horizontal,
             ),
             EsigDialogWidget(
+              'Mensagem horizontal exemplificada diretamente na tela',
               titulo: 'Título Horizontal',
-              mensagem: 'Mensagem horizontal exemplificada diretamente na tela',
               direcaoBotoes: Axis.horizontal,
               onPressedPrincipal: () {},
               textoPrincipal: Text('SIM'),
@@ -100,8 +100,8 @@ class _MyHomePageState extends State<MyHomePage> {
               textoSecundario: Text('NÃO'),
             ),
             EsigDialogWidget(
+              'Mensagem vertical',
               titulo: 'Título Vertical exemplificado diretamente na tela',
-              mensagem: 'Mensagem vertical',
               direcaoBotoes: Axis.vertical,
               onPressedPrincipal: () {},
               textoPrincipal: Text('SIM BEM GRANDE'),

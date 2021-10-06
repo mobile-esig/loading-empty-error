@@ -42,8 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: List.generate(
                   i,
                   (index) => EsigRoundedAvatarWidget(
-                    largura: MediaQuery.of(context).size.width / i,
-                    urlImagem: urlImage,
+                    MediaQuery.of(context).size.width / i,
+                    urlImage,
                     corBorda: Colors.black,
                   ),
                 ),

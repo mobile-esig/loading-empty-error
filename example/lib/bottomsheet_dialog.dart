@@ -112,20 +112,20 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(onPressed: () {}, child: Text('Olá')),
             Divider(height: 50),
             EsigEmptyWidget(
+              'Ponha qualquer widget aqui',
               ilustracaoAsset: 'assets/empty.png',
               tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
               titulo: 'Olá',
-              mensagem: 'Ponha qualquer widget aqui',
             ),
             Divider(height: 50),
             EsigRoundedAvatarWidget(
-              largura: 100,
+              100,
+              'https://li.ctcdn.com.br/celebridades/78.400.jpg',
               corBorda: Colors.black,
-              urlImagem: 'https://li.ctcdn.com.br/celebridades/78.400.jpg',
             ),
             Divider(height: 50),
             EsigListOptionWidget(
-              children: [
+              [
                 Expanded(child: Text('Olá')),
               ],
             ),
