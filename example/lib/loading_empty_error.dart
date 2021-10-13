@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
       EsigErrorWidget(
         'Erro ao carregar mensagem de erro mínima',
         altura: 100,
-        
+        corTexto: Colors.green,
       ),
       EsigErrorWidget(
         'Erro ao carregar mensagem de erro completa',
@@ -45,8 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
         tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
         titulo: 'Ops...',
         tituloFontSize: 20,
-        
         mensagemFontSize: 16,
+        corTexto: Colors.red,
         onTryAgain: () {
           print('refreshing app');
         },
@@ -57,7 +57,6 @@ class _MyHomePageState extends State<MyHomePage> {
         'Carregando mensagem mínima com tamanho 100x100...',
         altura: 100,
         largura: 100,
-        
       ),
       EsigLoadingWidget(
         'Preparando sua mensagem de carregamento completa com largura igual à metade da tela...',
@@ -65,13 +64,11 @@ class _MyHomePageState extends State<MyHomePage> {
         tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
         paddingIndicator: EdgeInsets.all(20),
         loadingIndicator: LoadingIndicator.LINEAR,
-        
         mensagemFontSize: 16,
         largura: MediaQuery.of(context).size.width / 2,
       ),
       EsigEmptyWidget(
         'Não encontramos sua mensagem mínima de tela vazia',
-        
         altura: 200,
       ),
       EsigEmptyWidget(
@@ -80,7 +77,6 @@ class _MyHomePageState extends State<MyHomePage> {
         tamanhoIlustracao: BoxConstraints(maxWidth: 140, maxHeight: 140),
         titulo: 'Ops...',
         tituloFontSize: 20,
-        
         mensagemFontSize: 16,
       ),
       SizedBox(height: 60),

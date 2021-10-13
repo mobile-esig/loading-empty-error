@@ -18,6 +18,7 @@ class EsigLoadingWidget extends StatelessWidget {
     this.colorIndicator,
     this.altura,
     this.largura,
+    this.corMensagem,
   }) : super(key: key);
 
   /// Caminho do asset declarado no [pubspec.yaml]. A imagem está configurada
@@ -41,6 +42,9 @@ class EsigLoadingWidget extends StatelessWidget {
 
   /// Mensagem explicando o motivo deste widget aparecer.
   final String mensagem;
+
+  /// Cor do texto na mensagem
+  final Color? corMensagem;
 
   /// Tamanho da mensagem.
   final double? mensagemFontSize;
@@ -103,6 +107,9 @@ class EsigLoadingWidget extends StatelessWidget {
   Text _buildMensagem() => Text(
         mensagem,
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: mensagemFontSize),
+        style: TextStyle(
+          fontSize: mensagemFontSize,
+          color: corMensagem,
+        ),
       );
 }

@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 /// Widgets distinado aos casos nos quais ocorreu um erro interno no app e
 /// alguma tarefa não pôde ser completada.
 class EsigErrorWidget extends StatelessWidget {
-  const EsigErrorWidget(this.mensagem,{
+  const EsigErrorWidget(
+    this.mensagem, {
     Key? key,
     this.ilustracaoAsset,
     this.tamanhoIlustracao,
     this.titulo,
     this.tituloFontSize,
     this.tituloPadding = const EdgeInsets.all(8.0),
-    
     this.mensagemFontSize,
     this.mensagemPadding = const EdgeInsets.all(8.0),
     this.onTryAgain,
@@ -20,6 +20,7 @@ class EsigErrorWidget extends StatelessWidget {
     this.tryAgainTextColor,
     this.altura,
     this.largura,
+    this.corTexto,
   }) : super(key: key);
 
   /// Caminho do asset declarado no [pubspec.yaml]. A imagem está configurada
@@ -46,6 +47,9 @@ class EsigErrorWidget extends StatelessWidget {
 
   /// Padding em torno da mensagem.
   final EdgeInsets mensagemPadding;
+
+  /// Cor do texto do título e mensagem
+  final Color? corTexto;
 
   /// Função chamada ao apertar botão TENTAR NOVAMENTE. O botão só é exibido se
   /// o parâmetro receber um valor.
@@ -117,7 +121,7 @@ class EsigErrorWidget extends StatelessWidget {
         child: Text(
           mensagem,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: mensagemFontSize),
+          style: TextStyle(fontSize: mensagemFontSize, color: corTexto),
         ),
       );
 
@@ -127,7 +131,7 @@ class EsigErrorWidget extends StatelessWidget {
           titulo!,
           textAlign: TextAlign.center,
           style: TextStyle(
-            color: Colors.black,
+            color: corTexto,
             fontSize: tituloFontSize,
             fontWeight: FontWeight.bold,
           ),

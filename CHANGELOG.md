@@ -1,3 +1,7 @@
+## [3.0.1] - Loading, Empty, Error
+
+    - É possível alterar cor do texto dos widget de Loading, Empty e Error
+
 ## [3.0.0] - Refatoração geral
 
     - Corrije cor do indicador de carregamento no EsigLoadingWidget
