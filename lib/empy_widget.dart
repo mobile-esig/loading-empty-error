@@ -69,7 +69,7 @@ class EsigEmptyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: largura,
       height: altura,
       child: Column(

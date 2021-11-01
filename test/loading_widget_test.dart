@@ -38,34 +38,5 @@ void main() {
 
     // should have a padding
     expect(find.byType(Padding), findsOneWidget);
-
-    // should have specified width
-    expect(
-      find.byWidgetPredicate((Widget widget) {
-        final EsigLoadingWidget loadingWidget = tester.allWidgets
-                .firstWhere((element) => element is EsigLoadingWidget)
-            as EsigLoadingWidget;
-
-        final Size baseSize = tester.getSize(find.byType(EsigLoadingWidget));
-
-        // BoxConstraints constraints = loadingWidget.largura;
-        return true;
-        // (width.minWidth == width.maxWidth) && (width.minWidth == 100);
-      }),
-      findsOneWidget,
-    );
-
-    // should have specified height
-    expect(
-      find.byWidgetPredicate((Widget widget) {
-        if (widget is Container) {
-          BoxConstraints height = widget.constraints!.heightConstraints();
-          return height.maxHeight == 140;
-        } else {
-          return false;
-        }
-      }),
-      findsOneWidget,
-    );
   });
 }

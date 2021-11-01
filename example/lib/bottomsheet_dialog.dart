@@ -8,10 +8,12 @@ import 'package:loading_empty_error/list_option.dart';
 import 'package:loading_empty_error/rounded_avatar_widget.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -106,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             SizedBox(height: 30),
             EsigChipWidget(
-              children: [Text('Olá')],
+              children: const [Text('Olá')],
             ),
             Divider(height: 50),
             ElevatedButton(onPressed: () {}, child: Text('Olá')),
@@ -125,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Divider(height: 50),
             EsigListOptionWidget(
-              [
+              const [
                 Expanded(child: Text('Olá')),
               ],
             ),

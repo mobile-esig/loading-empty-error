@@ -22,7 +22,7 @@ class _EsigUploadFileWidgetState extends State<EsigUploadFileWidget> {
   Widget build(BuildContext context) {
     return EsigContainerWidget(
       child: Row(
-        children: [],
+        children: const [],
       ),
     );
   }

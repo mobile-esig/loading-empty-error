@@ -6,12 +6,12 @@ import 'botao_dialog.dart';
 
 /// Dialog destinado a apresentar instruções, e possivelmente opções, ao usuário.
 class EsigDialogWidget extends StatelessWidget {
-  EsigDialogWidget(this.mensagem,{
+  const EsigDialogWidget(
+    this.mensagem, {
     Key? key,
     this.icone,
     this.titulo,
     this.tamanhoTitulo,
-  
     this.tamanhoMensagem,
     this.direcaoBotoes = Axis.horizontal,
     this.onPressedPrincipal,
@@ -74,7 +74,7 @@ class EsigDialogWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textoPadrao = Text('OK');
-    final double alturaBotao = 40;
+    const double alturaBotao = 40;
     final Widget divider = direcaoBotoes == Axis.vertical
         ? Divider(height: 1)
         : VerticalDivider(width: 1);
@@ -121,7 +121,7 @@ class EsigDialogWidget extends StatelessWidget {
             ),
           ),
           Divider(height: 1),
-          Container(
+          SizedBox(
             height: alturaBotoes,
             child: Flex(
               mainAxisSize: MainAxisSize.min,

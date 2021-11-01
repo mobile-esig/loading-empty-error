@@ -4,9 +4,10 @@ class EsigRoundedAvatarWidget extends StatelessWidget {
   const EsigRoundedAvatarWidget(
     this.largura,
     this.urlImagem, {
+    Key? key,
     this.borderRadius,
     this.corBorda,
-  });
+  }) : super(key: key);
 
   /// Largura do widget. É sempre igual à altura.
   final double largura;

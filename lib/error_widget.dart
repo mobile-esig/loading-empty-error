@@ -87,16 +87,16 @@ class EsigErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: largura,
       height: altura,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          ilustracaoAsset != null ? _buildIlustracao() : Container(),
-          titulo != null ? _buildTitulo() : Container(),
+          ilustracaoAsset != null ? _buildIlustracao() : SizedBox(),
+          titulo != null ? _buildTitulo() : SizedBox(),
           _buildMensagem(),
-          onTryAgain != null ? _buildBotaoRefresh(context) : Container()
+          onTryAgain != null ? _buildBotaoRefresh(context) : SizedBox()
         ],
       ),
     );

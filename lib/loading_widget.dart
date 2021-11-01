@@ -73,16 +73,16 @@ class EsigLoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: largura,
       height: altura,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ilustracaoAsset != null ? _buildIlustracao() : Container(),
+          ilustracaoAsset != null ? _buildIlustracao() : SizedBox(),
           loadingIndicator != LoadingIndicator.VAZIO
               ? _buildLoadingIndicator()
-              : Container(),
+              : SizedBox(),
           _buildMensagem(),
         ],
       ),
