@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
             'Sou um Container padrão. Os widgets abaixo são feitos a partir de mim.'),
       ),
       EsigListOptionWidget(
-         [
+        [
           Image.asset(
             'assets/error.png',
             width: 50,
@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ],
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
         onTap: () {
           showDialog(
             context: context,
@@ -60,7 +61,6 @@ class _MyHomePageState extends State<MyHomePage> {
               return EsigDialogWidget(
                 'Você clicou na primeira opção',
                 titulo: 'Parabéns!',
-                
               );
             },
           );
@@ -84,7 +84,6 @@ class _MyHomePageState extends State<MyHomePage> {
               return EsigDialogWidget(
                 'Você clicou na segunda opção',
                 titulo: 'Parabéns!',
-                
               );
             },
           );
@@ -119,7 +118,6 @@ class _MyHomePageState extends State<MyHomePage> {
               return EsigDialogWidget(
                 'Você concluiu o tutorial',
                 titulo: 'Parabéns!',
-                
               );
             },
           );
@@ -127,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     ];
     return Scaffold(
-      appBar: AppBar(title: Text('Exemplos das opções')),
+      appBar: AppBar(title: Text('Exemplos de ListOptionWidget')),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 /// Função com retorno dependendo dos parâmetros:
-/// - Se [context] NÃO FOR passado, retorna o widget SnackBar padrão do flutter com os valores 
+/// - Se [context] NÃO FOR passado, retorna o widget SnackBar padrão do flutter com os valores
 /// especificado nos parâmetros.
-/// 
-/// - Se [context] FOR passado, não retorna nada e mostra o SnackBar no Scaffold que está à mostra 
+///
+/// - Se [context] FOR passado, não retorna nada e mostra o SnackBar no Scaffold que está à mostra
 /// no app por meio do código: [ScaffoldMessenger.of(context).showSnackBar(snackbar)]
 SnackBar? getEsigSnackBar(
   String mensagem, {
@@ -25,9 +25,7 @@ SnackBar? getEsigSnackBar(
         );
 
   final snackbar = SnackBar(
-    padding: EdgeInsets.symmetric(
-      horizontal: 0,
-    ).copyWith(
+    padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10).copyWith(
       top: padding?.top,
       right: padding?.right,
       bottom: padding?.bottom,

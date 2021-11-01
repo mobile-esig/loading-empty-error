@@ -6,9 +6,9 @@ class EsigBottomSheetDialog extends StatelessWidget {
     Key? key,
     this.height,
     required this.child,
-    this.titulo = const Text('TÍTULO'),
-    this.closeIcon = const Icon(Icons.close, color: Colors.black),
-    this.padding = const EdgeInsets.symmetric(horizontal: 20),
+    this.titulo,
+    this.closeIcon,
+    this.padding,
     this.result,
   }) : super(key: key);
 
@@ -16,7 +16,7 @@ class EsigBottomSheetDialog extends StatelessWidget {
   final Widget child;
 
   /// Texto centralizado no cabeçalho do BottomSheet.
-  final Text titulo;
+  final Text? titulo;
 
   /// Tamanho do BottomSheet.
   final double? height;
@@ -28,7 +28,7 @@ class EsigBottomSheetDialog extends StatelessWidget {
   final Icon? closeIcon;
 
   /// padding aplicado ao conteúdo do BottomSheet.
-  final EdgeInsets padding;
+  final EdgeInsets? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class EsigBottomSheetDialog extends StatelessWidget {
           Divider(height: 1),
           Flexible(
             child: SingleChildScrollView(
-              padding: padding,
+              padding: padding ?? EdgeInsets.symmetric(horizontal: 20),
               child: child,
             ),
           ),
@@ -65,11 +65,11 @@ class EsigBottomSheetDialog extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: GestureDetector(
-              child: closeIcon,
+              child: closeIcon ?? Icon(Icons.close, color: Colors.black),
               onTap: () => Navigator.pop(context, result),
             ),
           ),
-          titulo,
+          titulo ?? Text('TÍTULO'),
         ],
       ),
     );

@@ -1,3 +1,8 @@
+## [3.1.0] - Snackbar e ListOption
+
+    - Snackbar com padding interno por padrão
+    - ListOption com padding e margin configuráveis. Antes usava o valor padrão do EsigContainer
+
 ## [3.0.1] - Loading, Empty, Error
 
     - É possível alterar cor do texto dos widget de Loading, Empty e Error

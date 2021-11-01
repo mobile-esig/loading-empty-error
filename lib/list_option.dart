@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:loading_empty_error/container.dart';
 
 class EsigListOptionWidget extends StatelessWidget {
-  const EsigListOptionWidget(this.children,{
+  const EsigListOptionWidget(
+    this.children, {
     Key? key,
-    
     this.corSeta = Colors.grey,
     this.tamanhoSeta = 20,
-    this.corBorda = const Color(0xFFE4EDF5),
+    this.corBorda,
     this.corFundo,
     this.onTap,
+    this.padding,
+    this.margin,
   }) : super(key: key);
 
   /// Lista de Widgets enfileirados numa [Row] à esquerda da seta.
@@ -31,9 +33,15 @@ class EsigListOptionWidget extends StatelessWidget {
   /// Função executada ao clicar na opção.
   final void Function()? onTap;
 
+  /// Espaçamentos repassado para o [EsigContainerWidget]
+  final EdgeInsets? padding;
+  final EdgeInsets? margin;
+
   @override
   Widget build(BuildContext context) {
     return EsigContainerWidget(
+      margin: margin,
+      padding: padding,
       onTap: onTap,
       corBorda: corBorda,
       corFundo: corFundo,
