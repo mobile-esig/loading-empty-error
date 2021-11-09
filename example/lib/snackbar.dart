@@ -20,14 +20,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   final String mensagemSnackBar =
       'Exemplo de mensagem. Para me dispensar, aperte o botão ao lado com o nome \'Fechar\' ou me deslize para baixo.';
   @override

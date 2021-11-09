@@ -21,14 +21,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   final String urlImage =
       'https://imagens.canaltech.com.br/celebridades/78.400.jpg';
   @override

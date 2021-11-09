@@ -1,3 +1,7 @@
+## [3.1.1] - BottomTabBar
+
+    - Adiciona `EsigOptionBarWidget` e `EsigTabOptionWidget`
+
 ## [3.1.0] - Snackbar e ListOption
 
     - Snackbar com padding interno por padrão
