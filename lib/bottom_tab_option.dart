@@ -85,7 +85,6 @@ class EsigTabOptionWidget extends StatelessWidget {
     return Positioned(
       right: 0,
       child: Container(
-        padding: EdgeInsets.all(1),
         decoration: badgeDecoration,
         constraints: badgeConstraints,
         child: Center(

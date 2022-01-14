@@ -1,3 +1,10 @@
+## [3.2.0] - DateTimeFormField e DateRangeFormField
+
+    - Adiciona extensões `DateTimeExtension`, `DateTimeRangeExtension` e `IntExtension`.
+    - Adiciona função `textoSeparado()`.
+    - Adiciona Widgets de selecionar data e intervalo de datas, respectivamente:   `DatePicker` e `DateRangePicker`.
+    - Adiciona FormFields que encapsulam `DatePicker` e `DateRangePicker`. Agora é possível usá-los com validação.
+
 ## [3.1.1] - BottomTabBar
 
     - Adiciona `EsigOptionBarWidget` e `EsigTabOptionWidget`
