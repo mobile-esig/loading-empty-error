@@ -1,3 +1,8 @@
+## [3.3.0] - Bordas do DateTimeFormField e DateRangeFormField
+
+    - Adiciona enum `InputBorderType`
+    - Torna borda de FormFields de data configuráveis. Usuário pode escolher entre NONE, UNDERLINE e OUTLINED
+
 ## [3.2.0] - DateTimeFormField e DateRangeFormField
 
     - Adiciona extensões `DateTimeExtension`, `DateTimeRangeExtension` e `IntExtension`.

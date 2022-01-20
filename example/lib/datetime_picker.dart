@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_empty_error/datetime/daterange_form_field.dart';
 import 'package:loading_empty_error/datetime/datetime_form_field.dart';
+import 'package:loading_empty_error/utils/enums/input_border_enum.dart';
 import 'package:loading_empty_error/utils/extensions/date_time_range_ext.dart';
 
 void main() {
@@ -59,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 firstDate: DateTime.now().subtract(Duration(days: 500)),
                 initialDate: dataSelecionada,
                 lastDate: DateTime.now().add(Duration(days: 7)),
+                borderType: InputBorderType.OUTLINED,
                 onSaved: (DateTime? datetime) {
                   setState(() {
                     if (datetime != null) {
@@ -84,6 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 firstDate: DateTime.now().subtract(Duration(days: 500)),
                 lastDate: DateTime.now().add(Duration(days: 7)),
                 initialDateRange: intervaloSelecionado,
+                // borderType: InputBorderType.UNDERLINE,
                 onSaved: (DateTimeRange? daterange) {
                   setState(() {
                     if (daterange != null) {

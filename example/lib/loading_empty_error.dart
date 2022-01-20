@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:developer' as developer;
 
 import 'package:loading_empty_error/empy_widget.dart';
 import 'package:loading_empty_error/error_widget.dart';
@@ -45,7 +46,7 @@ class MyHomePage extends StatelessWidget {
         mensagemFontSize: 16,
         corTexto: Colors.red,
         onTryAgain: () {
-          print('refreshing app');
+          developer.log('refreshing app');
         },
         tryAgainBackgroundColor: Colors.yellowAccent,
         tryAgainTextColor: Colors.black,

@@ -7,10 +7,10 @@ main() {
   late Widget widget;
 
   testWidgets('EsigContainer', (WidgetTester tester) async {
-    final corFundo = Colors.red;
-    final corBorda = Colors.blue;
-    final child = Text('Olá mundo');
-    final esigContainer = EsigContainerWidget(
+    const corFundo = Colors.red;
+    const corBorda = Colors.blue;
+    const child = Text('Olá mundo');
+    const esigContainer = EsigContainerWidget(
       child: child,
       corBorda: corBorda,
       corFundo: corFundo,

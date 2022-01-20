@@ -4,6 +4,7 @@ import 'package:loading_empty_error/bottomsheet_dialog.dart';
 import 'package:loading_empty_error/debug_bottomsheet.dart';
 import 'package:loading_empty_error/chip.dart';
 import 'package:loading_empty_error/list_option.dart';
+import 'dart:developer' as developer;
 
 import 'package:loading_empty_error/rounded_avatar_widget.dart';
 
@@ -45,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Abrir BottomSheetDialog'),
               onPressed: () async {
                 final result = await _showBottomSheet(42);
-                print('bottomSheet result: $result');
+                developer.log('bottomSheet result: $result');
               },
             ),
             ElevatedButton(

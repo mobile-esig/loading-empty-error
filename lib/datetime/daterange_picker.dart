@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loading_empty_error/utils/enums/input_border_enum.dart';
 import '../utils/extensions/date_time_range_ext.dart';
 
 class DateRangePicker extends StatefulWidget {
@@ -7,9 +8,12 @@ class DateRangePicker extends StatefulWidget {
     this.onPicked,
     required this.firstDate,
     required this.lastDate,
-    this.labelText,
     required this.initialDateRange,
+    this.labelText,
+    this.borderType,
   }) : super(key: key);
+
+  final InputBorderType? borderType;
 
   /// Limite inferior no calendário, datas anteriores serão inativas
   final DateTime firstDate;
@@ -35,6 +39,23 @@ class _DateRangePickerState extends State<DateRangePicker> {
   late final _dateCtrl = TextEditingController(
     text: _dateRangeToString(picked),
   );
+  late final InputBorder _border;
+
+  @override
+  void initState() {
+    switch (widget.borderType) {
+      case InputBorderType.NONE:
+        _border = InputBorder.none;
+        break;
+      case InputBorderType.UNDERLINE:
+        _border = UnderlineInputBorder();
+        break;
+      case InputBorderType.OUTLINED:
+      default:
+        _border = OutlineInputBorder(borderRadius: BorderRadius.circular(5));
+    }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +78,7 @@ class _DateRangePickerState extends State<DateRangePicker> {
           keyboardType: TextInputType.datetime,
           decoration: InputDecoration(
             labelText: widget.labelText ?? 'Escolha um período',
+            border: _border,
           ),
         ),
       ),

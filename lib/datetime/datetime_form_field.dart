@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loading_empty_error/utils/enums/input_border_enum.dart';
 import 'datetime_picker.dart';
 
 class DateTimeFormField extends StatelessWidget {
@@ -10,7 +11,10 @@ class DateTimeFormField extends StatelessWidget {
     required this.lastDate,
     this.validator,
     this.labelText,
+    this.borderType,
   }) : super(key: key);
+
+  final InputBorderType? borderType;
 
   /// Texto com instruções
   final String? labelText;
@@ -32,39 +36,35 @@ class DateTimeFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        FormField<DateTime>(
-          onSaved: onSaved,
-          validator: validator,
-          builder: (FormFieldState<DateTime> state) => Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              DatePicker(
-                labelText: labelText,
-                firstDate: firstDate,
-                lastDate: lastDate,
-                initialDate: initialDate,
-                onPicked: (dateTime) {
-                  state.didChange(dateTime);
-                  if (state.validate()) {
-                    state.save();
-                  }
-                },
-              ),
-              if (state.hasError)
-                Padding(
-                  padding: EdgeInsets.only(top: 8),
-                  child: Text(
-                    state.errorText ?? '',
-                    style: TextStyle(color: Colors.red, fontSize: 12),
-                  ),
-                )
-            ],
+    return FormField<DateTime>(
+      onSaved: onSaved,
+      validator: validator,
+      builder: (FormFieldState<DateTime> state) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          DatePicker(
+            labelText: labelText,
+            firstDate: firstDate,
+            lastDate: lastDate,
+            initialDate: initialDate,
+            borderType: borderType,
+            onPicked: (DateTime? dateTime) {
+              state.didChange(dateTime);
+              if (state.validate()) {
+                state.save();
+              }
+            },
           ),
-        ),
-      ],
+          if (state.hasError)
+            Padding(
+              padding: EdgeInsets.only(top: 8),
+              child: Text(
+                state.errorText ?? '',
+                style: TextStyle(color: Colors.red, fontSize: 12),
+              ),
+            )
+        ],
+      ),
     );
   }
 }
