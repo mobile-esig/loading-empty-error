@@ -1,3 +1,7 @@
+## [3.4.0] - LabeledContainerWidget
+
+    - Adiciona o `LabeledContainerWidget` com exemplo
+
 ## [3.3.0] - Bordas do DateTimeFormField e DateRangeFormField
 
     - Adiciona enum `InputBorderType`
