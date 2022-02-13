@@ -35,7 +35,7 @@ class DatePicker extends StatefulWidget {
 }
 
 class _DatePickerState extends State<DatePicker> {
-  var picked = DateTime.now();
+  late var picked = widget.initialDate;
   late final _dateCtrl = TextEditingController(text: picked.formattedDate());
 
   late final InputBorder _border;

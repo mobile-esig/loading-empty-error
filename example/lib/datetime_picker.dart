@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_empty_error/datetime/daterange_form_field.dart';
 import 'package:loading_empty_error/datetime/datetime_form_field.dart';
@@ -57,9 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(height: 16),
               DateTimeFormField(
                 labelText: 'Escolha uma data no ano atual',
-                firstDate: DateTime.now().subtract(Duration(days: 500)),
+                firstDate: dataSelecionada.subtract(Duration(days: 500)),
                 initialDate: dataSelecionada,
-                lastDate: DateTime.now().add(Duration(days: 7)),
+                lastDate: dataSelecionada.add(Duration(days: 7)),
                 borderType: InputBorderType.OUTLINED,
                 onSaved: (DateTime? datetime) {
                   setState(() {
@@ -73,6 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   if (datetime.year != DateTime.now().year) {
                     return 'Selecione uma data no ano atual';
                   }
+                  return null;
                 },
               ),
               SizedBox(height: 100),
@@ -83,8 +83,9 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(height: 16),
               DateRangeFormField(
                 labelText: 'Escolha um período contido no ano atual',
-                firstDate: DateTime.now().subtract(Duration(days: 500)),
-                lastDate: DateTime.now().add(Duration(days: 7)),
+                firstDate:
+                    intervaloSelecionado.start.subtract(Duration(days: 500)),
+                lastDate: intervaloSelecionado.end.add(Duration(days: 7)),
                 initialDateRange: intervaloSelecionado,
                 // borderType: InputBorderType.UNDERLINE,
                 onSaved: (DateTimeRange? daterange) {
@@ -100,6 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       daterange.end.year != DateTime.now().year) {
                     return 'Selecione um intervalo contido no ano atual';
                   }
+                  return null;
                 },
               )
             ],

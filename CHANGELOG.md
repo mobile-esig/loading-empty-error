@@ -1,3 +1,7 @@
+## [3.4.1] - DatePicker
+
+    - Corrige bug na data inicial do Datepicker
+
 ## [3.4.0] - LabeledContainerWidget
 
     - Adiciona o `LabeledContainerWidget` com exemplo
