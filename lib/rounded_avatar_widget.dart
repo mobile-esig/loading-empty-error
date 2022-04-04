@@ -7,6 +7,7 @@ class EsigRoundedAvatarWidget extends StatelessWidget {
     Key? key,
     this.borderRadius,
     this.corBorda,
+    this.fit,
   }) : super(key: key);
 
   /// Largura do widget. É sempre igual à altura.
@@ -22,6 +23,9 @@ class EsigRoundedAvatarWidget extends StatelessWidget {
   /// Cor da borda. Valor padrão é [Colors.transparent].
   final Color? corBorda;
 
+  // Posição da imagem interna
+  final BoxFit? fit;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +37,7 @@ class EsigRoundedAvatarWidget extends StatelessWidget {
         ),
         border: Border.all(color: corBorda ?? Colors.transparent),
         image: DecorationImage(
-          fit: BoxFit.contain,
+          fit: fit ?? BoxFit.contain,
           image: NetworkImage(urlImagem),
         ),
       ),

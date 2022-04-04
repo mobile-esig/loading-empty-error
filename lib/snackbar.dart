@@ -56,4 +56,5 @@ SnackBar? getEsigSnackBar(
   } else {
     ScaffoldMessenger.of(context).showSnackBar(snackbar);
   }
+  return null;
 }

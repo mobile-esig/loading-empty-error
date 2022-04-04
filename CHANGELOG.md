@@ -1,3 +1,8 @@
+## [3.4.2] - Adiciona atributos de personalização
+
+    - Adiciona atributo fit ao `EsigRoundedAvatarWidget`
+    - Adiciona atributo paddingIlustracao ao `EsigLoadingWidget`
+
 ## [3.4.1] - DatePicker
 
     - Corrige bug na data inicial do Datepicker

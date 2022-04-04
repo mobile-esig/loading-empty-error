@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 /// Widgets distinado aos casos nos quais ocorreu um erro interno no app e

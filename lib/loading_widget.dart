@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import 'loading_indicator_type.dart';
@@ -14,6 +12,7 @@ class EsigLoadingWidget extends StatelessWidget {
     this.tamanhoIlustracao,
     this.loadingIndicator = LoadingIndicator.VAZIO,
     this.paddingIndicator,
+    this.paddingIlustracao,
     this.mensagemFontSize,
     this.colorIndicator,
     this.altura,
@@ -27,6 +26,9 @@ class EsigLoadingWidget extends StatelessWidget {
 
   /// Constraints máximos e mínimos da ilustração.
   final BoxConstraints? tamanhoIlustracao;
+
+  /// Padding aplicado à ilustração. Valor padrão é [EdgeInsets.all(8.0)]
+  final EdgeInsets? paddingIlustracao;
 
   /// Tipo do indicador de progresso padrão do Flutter a ser exibido. Opções
   /// estão disponíveis em [loading_indicator_type.dart] e são [VAZIO], [LINEAR],
@@ -90,6 +92,7 @@ class EsigLoadingWidget extends StatelessWidget {
   }
 
   Container _buildIlustracao() => Container(
+        padding: paddingIlustracao ?? EdgeInsets.all(8),
         constraints: tamanhoIlustracao,
         child: Image.asset(
           ilustracaoAsset!,
@@ -98,7 +101,7 @@ class EsigLoadingWidget extends StatelessWidget {
       );
 
   Widget _buildLoadingIndicator() => Padding(
-        padding: paddingIndicator ?? EdgeInsets.all(8.0),
+        padding: paddingIndicator ?? EdgeInsets.all(8),
         child: loadingIndicator == LoadingIndicator.CIRCULAR
             ? CircularProgressIndicator(color: colorIndicator)
             : LinearProgressIndicator(color: colorIndicator),
