@@ -7,7 +7,7 @@ class DatePicker extends StatefulWidget {
     Key? key,
     this.onPicked,
     required this.firstDate,
-    required this.initialDate,
+    this.initialDate,
     required this.lastDate,
     this.labelText,
     this.borderType,
@@ -19,7 +19,7 @@ class DatePicker extends StatefulWidget {
   final DateTime firstDate;
 
   /// Primeira data selecionada ao abrir o calendário. Obrigatoriamente está entre [firstDate] e [lastDate]
-  final DateTime initialDate;
+  final DateTime? initialDate;
 
   /// Limite superior no calendário, datas posteriores serão inativas
   final DateTime lastDate;
@@ -35,8 +35,11 @@ class DatePicker extends StatefulWidget {
 }
 
 class _DatePickerState extends State<DatePicker> {
-  late var picked = widget.initialDate;
-  late final _dateCtrl = TextEditingController(text: picked.formattedDate());
+  /// DateTime(0) representa uma data nula, quando não é passado em [initialDate]
+  final _nullValue = DateTime(0);
+
+  late var _picked = widget.initialDate ?? _nullValue;
+  late final _dateCtrl = TextEditingController(text: _picked.string);
 
   late final InputBorder _border;
 
@@ -65,10 +68,10 @@ class _DatePickerState extends State<DatePicker> {
         DateTime? d = await _selectDate(context);
         if (d != null) {
           setState(() {
-            picked = d;
-            _dateCtrl.text = picked.formattedDate();
+            _picked = d;
+            _dateCtrl.text = _picked.string;
           });
-          widget.onPicked?.call(picked);
+          widget.onPicked?.call(_picked);
         }
       },
       child: AbsorbPointer(
@@ -88,7 +91,8 @@ class _DatePickerState extends State<DatePicker> {
     return await showDatePicker(
       context: context,
       firstDate: widget.firstDate,
-      initialDate: widget.initialDate,
+      initialDate:
+          _picked == _nullValue ? widget.lastDate.truncateFuture : _picked,
       lastDate: widget.lastDate,
     );
   }

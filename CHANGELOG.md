@@ -1,3 +1,7 @@
+## [3.4.3] - DateTimeFormPicker
+
+    - Parâmetro `initialDate` do `DateTimeFormPicker` e do `DateTimePicker` não é mais obrigatório
+
 ## [3.4.2] - Adiciona atributos de personalização
 
     - Adiciona atributo fit ao `EsigRoundedAvatarWidget`

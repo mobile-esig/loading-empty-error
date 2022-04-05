@@ -7,7 +7,7 @@ class DateTimeFormField extends StatelessWidget {
     Key? key,
     this.onSaved,
     required this.firstDate,
-    required this.initialDate,
+    this.initialDate,
     required this.lastDate,
     this.validator,
     this.labelText,
@@ -23,7 +23,7 @@ class DateTimeFormField extends StatelessWidget {
   final DateTime firstDate;
 
   /// Primeira data selecionada ao abrir o calendário. Obrigatoriamente está entre [firstDate] e [lastDate]
-  final DateTime initialDate;
+  final DateTime? initialDate;
 
   /// Limite superior no calendário, datas posteriores serão inativas
   final DateTime lastDate;
@@ -45,8 +45,8 @@ class DateTimeFormField extends StatelessWidget {
           DatePicker(
             labelText: labelText,
             firstDate: firstDate,
-            lastDate: lastDate,
             initialDate: initialDate,
+            lastDate: lastDate,
             borderType: borderType,
             onPicked: (DateTime? dateTime) {
               state.didChange(dateTime);

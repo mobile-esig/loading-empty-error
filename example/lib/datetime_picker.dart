@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               DateTimeFormField(
                 labelText: 'Escolha uma data no ano atual',
                 firstDate: dataSelecionada.subtract(Duration(days: 500)),
-                initialDate: dataSelecionada,
+                initialDate: null,
                 lastDate: dataSelecionada.add(Duration(days: 7)),
                 borderType: InputBorderType.OUTLINED,
                 onSaved: (DateTime? datetime) {
