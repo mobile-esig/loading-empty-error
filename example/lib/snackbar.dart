@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loading_empty_error/snackbar.dart';
+import 'dart:developer' as developer;
 
 void main() {
   runApp(MyApp());
@@ -83,6 +84,23 @@ class MyHomePage extends StatelessWidget {
                   context: context,
                   duracao: 20,
                   padding: EdgeInsets.only(bottom: 40),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: Text('Snackbar com action'),
+              onPressed: () {
+                getEsigSnackBar(
+                  'Tarefa realizada com sucesso.',
+                  context: context,
+                  duracao: 20,
+                  padding: EdgeInsets.only(bottom: 40),
+                  action: SnackBarAction(
+                    label: 'Abrir',
+                    onPressed: () {
+                      developer.log('Ação customizada');
+                    },
+                  ),
                 );
               },
             ),

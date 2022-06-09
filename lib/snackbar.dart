@@ -16,13 +16,13 @@ SnackBar? getEsigSnackBar(
   EdgeInsets? padding,
   SnackBarAction? action,
 }) {
-  final action = context == null
-      ? null
-      : SnackBarAction(
-          label: 'Fechar',
-          textColor: corTexto,
-          onPressed: () => ScaffoldMessenger.of(context).hideCurrentSnackBar(),
-        );
+  if (context != null) {
+    action ??= SnackBarAction(
+      label: 'Fechar',
+      textColor: corTexto,
+      onPressed: () => ScaffoldMessenger.of(context).hideCurrentSnackBar(),
+    );
+  }
 
   final snackbar = SnackBar(
     padding: EdgeInsets.symmetric(horizontal: 0, vertical: 10).copyWith(

@@ -1,3 +1,7 @@
+## [3.4.4] - Snackbar
+
+    - Corrige bug no action do snackbar
+
 ## [3.4.3] - DateTimeFormPicker
 
     - Parâmetro `initialDate` do `DateTimeFormPicker` e do `DateTimePicker` não é mais obrigatório
